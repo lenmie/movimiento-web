@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Estado** | v1.1 — diseño cerrado por Javi; revisión técnica (captcha, plan gratuito, sin cookies, sin métricas de éxito); pendiente de aprobación de Brisa (§11) |
+| **Estado** | v1.2 — diseño cerrado por Javi; revisión técnica (captcha, plan gratuito, sin cookies, sin métricas de éxito); v1.2: JS obligatorio (app React), sin metas de rendimiento por ahora; pendiente de aprobación de Brisa (§11) |
 | **Diseño de referencia** | Canvas "Movimiento — sitio web" (Claude Design) |
 | **Origen** | [`intent.md`](./intent.md) |
 | **Responsable del spec** | Javi |
@@ -155,14 +155,14 @@ móviles —inicio, cierre y después de descargar—, hoja de estados y vista p
 - R1.1 Hay **un solo botón de descarga**, en el cierre (S8). Dice **"Descargar libro"** y muestra
   formato y peso ("PDF · 20 MB").
 - R1.2 Apunta a `GET /descargar`. Se ofrece **una sola edición**: la web (~20 MB, D1).
-  La edición para impresión no se publica; se pide por mail (R6). Con JavaScript, el click agrega el token de verificación (R2.4) y el origen (R2.7) a la URL.
+  La edición para impresión no se publica; se pide por mail (R6). Al hacer click, el script agrega el token de verificación (R2.4) y el origen (R2.7) a la URL.
 - R1.3 El Worker registra la descarga si corresponde (R2) y **sirve el PDF directamente desde R2**
   (binding del Worker, en streaming). El bucket no es público: no se usa `r2.dev` ni dominio propio,
   y la dirección real del archivo nunca llega al navegador, así que toda descarga pasa por
   `/descargar` (D12).
 - R1.4 El archivo se sirve con `Content-Disposition: attachment; filename="Movimiento - Brisa Jazmin Arregui.pdf"`.
 - R1.5 **Si el registro o la verificación fallan, la descarga igual ocurre.** La descarga nunca depende del contador ni del captcha.
-- R1.6 El botón es un `<a href>` real: funciona sin JavaScript (esa descarga no se cuenta).
+- R1.6 El botón es un `<a href>` real. El sitio requiere JavaScript (app React).
 
 **Aceptación**
 - [ ] El hero no tiene botones; el botón de descarga aparece una sola vez, en S8.
@@ -170,7 +170,6 @@ móviles —inicio, cierre y después de descargar—, hoja de estados y vista p
 - [ ] Con la base de datos caída, `/descargar` igual entrega el PDF.
 - [ ] Con un token inválido o sin token, `/descargar` igual entrega el PDF.
 - [ ] Ninguna respuesta ni página del sitio contiene una URL de `r2.dev` ni del bucket.
-- [ ] Con JS deshabilitado, el botón descarga.
 
 ### R2 — Contador
 
@@ -189,7 +188,7 @@ móviles —inicio, cierre y después de descargar—, hoja de estados y vista p
     nuevo (`turnstile.reset()`), porque cada token sirve una sola vez y vence a los 300 s.
   - El Worker valida el token contra `siteverify` (secreto en variable de entorno). Solo si es válido, suma.
   - *Pre-clearance* desactivado: Turnstile no emite la cookie `cf_clearance`.
-  - Si Turnstile no carga (bloqueador, sin JS), el enlace funciona igual y la descarga no se cuenta.
+  - Si Turnstile no carga (por ejemplo, un bloqueador), el enlace funciona igual y la descarga no se cuenta.
   - Las solicitudes `HEAD` nunca se cuentan.
 - R2.5 **Falla:** si `/api/contador` falla o tarda > 3 s, el número **no se muestra** (nunca "0" ni un spinner eterno).
 - R2.6 **Umbral (D5):** mientras el total sea < 50, no se muestra el número.
@@ -258,8 +257,7 @@ como si se viera a través del papel. En el sitio el gesto pasa a los títulos d
   asunto *"Movimiento — edición para impresión"*, cuerpo *"Hola Brisa, quisiera la edición para
   impresión de Movimiento para…"*. Abre la app de correo de la persona; el sitio no guarda nada.
 - R6.3 La dirección no aparece escrita en el HTML: el script arma el `mailto:` al hacer click, para
-  que los recolectores automáticos de mails no la encuentren. Sin JavaScript, el enlace lleva a S7
-  (créditos), donde figura la dirección escrita como texto ("brisa [arroba] …").
+  que los recolectores automáticos de mails no la encuentren.
 - R6.4 El archivo de 399 MB **no se sube** a R2: Brisa lo envía por su cuenta (por ejemplo, con un
   enlace de Drive o WeTransfer).
 
@@ -393,7 +391,7 @@ aunque deje de contar (R1.5).
 | **Accesibilidad** | WCAG 2.2 AA. Contraste ≥ 4.5:1. Todas las fotos con texto alternativo descriptivo (escrito o revisado por Brisa). Navegable por teclado. | Javi |
 | **Privacidad** | Sin cookies ni almacenamiento en el dispositivo (ni `localStorage` ni `sessionStorage`), sin IP, sin rastreadores. Analítica: Cloudflare Web Analytics (sin cookies). Ver §7.1. | Javi |
 | **Costo** | Todo en planes gratuitos, sin tarjeta de crédito (§5.2). | Javi |
-| **Rendimiento** | **Carga inicial** ≤ 1,5 MB (HTML, CSS, JS, fuentes y fotos visibles sin scroll; el resto de las fotos con `loading="lazy"`) · LCP ≤ 2,5 s en 4G · Lighthouse Rendimiento y Accesibilidad ≥ 90. | Javi |
+| **Rendimiento** | Sin metas de rendimiento en v1 (pospuesto). Fotos fuera de la primera pantalla con `loading="lazy"`. | Javi |
 | **Seguridad** | Sin secretos en el repo. Enlaces externos con `rel="noopener"`. Sin JS de terceros salvo la analítica. | Javi |
 | **Repositorio** | Ningún `.pdf` ni imagen > 400 KB se sube al repo (bloqueado por hook en Build). | Javi |
 
