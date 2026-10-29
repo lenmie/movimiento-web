@@ -1,0 +1,2 @@
+# Clave de prueba de Turnstile: siempre valida. Copiar a .dev.vars.
+TURNSTILE_SECRET=1x0000000000000000000000000000000AA

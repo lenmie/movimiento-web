@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.wrangler/
+.dev.vars
+.env.local
+test-results/
+playwright-report/
+
+# Generadas por scripts/images.mjs
+public/img/
+src/content/imagenes.json
+
+# Nunca se sube un PDF (spec §7 Repositorio)
+*.pdf

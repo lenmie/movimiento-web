@@ -1,0 +1,21 @@
+#!/bin/sh
+# Spec §7 Repositorio: ningún .pdf ni imagen > 400 KB entra al repo.
+# Se activa con `npm run hooks`.
+limite=$((400 * 1024))
+fallo=0
+for f in $(git diff --cached --name-only --diff-filter=ACMR); do
+  case "$f" in
+    *.pdf|*.PDF)
+      echo "✗ $f: no se suben PDFs al repo"
+      fallo=1
+      ;;
+    *.jpg|*.jpeg|*.png|*.webp|*.avif|*.gif|*.JPG|*.JPEG|*.PNG)
+      tam=$(git cat-file -s ":$f")
+      if [ "$tam" -gt "$limite" ]; then
+        echo "✗ $f: $((tam / 1024)) KB (máx. 400 KB)"
+        fallo=1
+      fi
+      ;;
+  esac
+done
+exit $fallo

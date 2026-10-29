@@ -1,0 +1,22 @@
+name = "movimiento"
+compatibility_date = "2025-06-01"
+pages_build_output_dir = "./dist"
+
+[vars]
+PDF_KEY = "movimiento-web.pdf"
+# PENDIENTE (D3): enlaces reales de aporte
+CAFECITO_URL = "https://cafecito.app/"
+MERCADOPAGO_URL = "https://www.mercadopago.com.ar/"
+
+# TURNSTILE_SECRET es un secreto: `.dev.vars` en local, variable cifrada en Pages.
+
+[[d1_databases]]
+binding = "DB"
+database_name = "movimiento"
+# PENDIENTE: id real tras `wrangler d1 create movimiento`
+database_id = "00000000-0000-0000-0000-000000000000"
+migrations_dir = "migrations"
+
+[[r2_buckets]]
+binding = "LIBRO"
+bucket_name = "movimiento-libro"
