@@ -8,7 +8,7 @@ playwright-report/
 
 # Generadas por scripts/images.mjs
 public/img/
-src/content/imagenes.json
+src/content/fotos.generado.json
 
 # Nunca se sube un PDF (spec §7 Repositorio)
 *.pdf
