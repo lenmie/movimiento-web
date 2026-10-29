@@ -1,0 +1,146 @@
+{
+  "_nota": "Textos del sitio. Los que tienen 'pagina' están copiados TEXTUALMENTE del libro (PDF final, 128 págs.); no se editan sin Brisa. Las cronologías son fragmentos textuales del libro (a veces cortados a mitad de oración, con mayúscula inicial y punto final agregados) ordenados en el tiempo: Brisa debe aprobar la selección y las etiquetas 'cuando'. El resto es copia del sitio definida en el spec.",
+  "_revision": "PENDIENTE: aprobación de Brisa (spec §7 Contenido)",
+
+  "hero": {
+    "autora": "Brisa Jazmín Arregui",
+    "lugarFecha": "La Plata · Junio 2026",
+    "anio": "2026",
+    "bajada": "Libro de fotografías sobre prácticas corporales",
+    "invitacion": "Recorré el libro",
+    "invitacionDetalle": "Al final, podés descargarlo completo"
+  },
+
+  "apertura": {
+    "pagina": 7,
+    "texto": "El único requisito es estar disponible: para mirar con calma, para conectar con el mundo corporal más allá de la pose final, de la figura perfecta o del resultado. Para dejarte conmover por los gestos, las respiraciones, los espacios que se abren."
+  },
+
+  "practicas": [
+    {
+      "id": "contorsion",
+      "numeral": "I",
+      "titulo": "Contorsión",
+      "paginas": "29–40",
+      "texto": [
+        "La contorsión tiene raíces que cruzan continentes y siglos.",
+        "El pliegue, la torsión y la deformación del cuerpo ya no buscan mostrar rareza: buscan evidenciar la plasticidad humana, su maleabilidad, su capacidad de ir más allá de lo que se asume como dado. El cuerpo que se pliega interpela cánones, cuestiona la idea de normalidad y abre la posibilidad de una lectura que no se agota en lo estético."
+      ],
+      "cronologia": [
+        { "cuando": "Orígenes · Asia", "texto": "La flexibilidad extrema del yoga en India y las acrobacias chinas tenían un sentido espiritual." },
+        { "cuando": "Siglo XIX", "texto": "En Occidente, la contorsión ingresó al circo clásico del siglo XIX como número de exhibición." },
+        { "cuando": "Fines del siglo XX", "texto": "La contorsión dejó de ser acto de exhibición para convertirse en recurso expresivo." },
+        { "cuando": "Hoy", "texto": "Hoy la contorsión habita una zona fértil entre la performance, la danza y el arte escénico." }
+      ]
+    },
+    {
+      "id": "acrobacia",
+      "numeral": "II",
+      "titulo": "Acrobacia aérea",
+      "paginas": "57–72",
+      "texto": [
+        "Lo que distingue a la acrobacia aérea es su relación material con la gravedad y el vacío. El cuerpo trabaja en tensión permanente con su propio peso, con la altura, con el elemento que lo sostiene. Suspenderse, mantenerse, soltar y volver a agarrar: cada movimiento implica una negociación entre el cuerpo y el espacio. Y en esa negociación aparece algo paradójico: el cuerpo es al mismo tiempo vulnerable y poderoso, frágil y capaz.",
+        "Pero hay algo más que la relación con el espacio: hay una relación con el otro. En la acrobacia aérea, la confianza no está solo en el propio cuerpo sino en el elemento, en el docente que guía, en los compañeros que observan y sostienen."
+      ],
+      "cronologia": [
+        { "cuando": "1859", "texto": "La acrobacia aérea nació en el siglo XIX con la invención del trapecio volante, atribuida al francés Jules Léotard en 1859." },
+        { "cuando": "Circo clásico", "texto": "El número aéreo representaba el punto álgido del espectáculo: el cuerpo suspendido era la imagen más potente del riesgo y la destreza humana." },
+        { "cuando": "Fines del siglo XX", "texto": "Con el surgimiento del nuevo circo a fines del siglo XX, el sentido de la acrobacia aérea se transformó. El riesgo siguió estando, pero dejó de ser el fin." },
+        { "cuando": "América Latina", "texto": "La acrobacia aérea fue también recuperada desde el circo social: una corriente que la concibe como herramienta pedagógica y comunitaria." }
+      ]
+    },
+    {
+      "id": "danza",
+      "numeral": "III",
+      "titulo": "Danza",
+      "paginas": "91–102",
+      "texto": [
+        "La danza que se desarrolla desde estas tradiciones no imita algo externo ni cumple con una forma preestablecida. Está. En ese estar, el cuerpo se vuelve comunicación.",
+        "La danza pone su centralidad en el ser en movimiento. Su fuerza se da en presencia plena, con la emoción que lo mueve, en el gesto, en la respiración compartida. Con la escucha de lo que surge en el movimiento."
+      ],
+      "cronologia": [
+        { "cuando": "Orígenes", "texto": "Se vinculó a rituales de invocación, celebración y tránsito colectivo." },
+        { "cuando": "Siglos XVII y XVIII", "texto": "El ballet clásico, consolidado en los siglos XVII y XVIII, codificó el movimiento en formas precisas que respondían a un ideal de belleza altamente regulado." },
+        { "cuando": "Isadora Duncan (1877-1927)", "texto": "Propuso una danza descalza, libre, conectada con la respiración y el impulso interno." },
+        { "cuando": "Martha Graham (1894-1991)", "texto": "Desarrolló una técnica propia basada en la contracción y la liberación." },
+        { "cuando": "Mary Wigman (1886-1973)", "texto": "Exploró la danza desde el expresionismo, haciendo del movimiento una forma de habitar lo que no tiene palabras." },
+        { "cuando": "Argentina · Patricia Stokoe (1919-1996) y Ana Itelman (1927-1989)", "texto": "Desarrollaron la expresión corporal como lenguaje artístico y pedagógico." }
+      ]
+    }
+  ],
+
+  "protagonistas": {
+    "titulo": "Protagonistas",
+    "paginas": "121–127"
+  },
+
+  "autora": {
+    "titulo": "La autora",
+    "nombre": "Brisa Jazmín Arregui",
+    "notaEditorialTitulo": "Nota editorial",
+    "notaEditorial": {
+      "pagina": 128,
+      "parrafos": [
+        "Este libro de fotografía forma parte del Trabajo Integrador Final de la Licenciatura en Comunicación Social con Orientación en Planificación y Gestión en las Organizaciones, y fue desarrollado con fines estrictamente académicos.",
+        "Las personas fotografiadas en estas páginas son practicantes aficionadas de las disciplinas retratadas; participaron de manera voluntaria y con pleno consentimiento para la realización de este proyecto. No son deportistas ni profesionales de sus respectivas prácticas: son personas que eligieron el movimiento como parte de su vida cotidiana.",
+        "Esta obra no pretende constituir una investigación exhaustiva sobre las disciplinas que aparecen en ella. Su propósito es otro: visibilizar la subjetividad, los vínculos y la comunidad que estas prácticas corporales generan, a través del lenguaje fotográfico como herramienta de comunicación y de registro.",
+        "Para quien desee conocer el marco teórico, el recorrido metodológico y los objetivos específicos que sostienen la creación de este material, toda esa información se encuentra desarrollada en la memoria académica que acompaña a este libro y que da cuenta del proceso creativo, analítico y reflexivo detrás de cada decisión.",
+        "La concepción, dirección creativa y curaduría de esta publicación pertenecen a la autora."
+      ]
+    },
+    "creditos": {
+      "pagina": 2,
+      "items": [
+        { "rol": "Autoría y dirección creativa", "nombre": "Brisa Jazmín Arregui" },
+        { "rol": "Fotografía", "nombre": "Alejo Azzarini - Isabella Jubany" },
+        { "rol": "Diseño editorial", "nombre": "Livre Estudio - DCV Delfina Muñoz" }
+      ],
+      "edicion": "1ª edición — Ciudad de La Plata, junio de 2026",
+      "_pendiente": "D10: confirmar autoría de cada foto inédita"
+    },
+    "agradecimientosTitulo": "Agradecimientos",
+    "agradecimientos": {
+      "pagina": 2,
+      "texto": "Casa Ludika, Belén Romero, Carla Zabala, Delfina Muñoz, Fabricio Gomez, Julieta Romero, Lucia Ispizua, Malena Piñeiro, Mariel Dulau, Melany Morbiducci y Candela Ramos"
+    }
+  },
+
+  "cierre": {
+    "etiqueta": "El libro · Descarga libre y gratuita",
+    "cita": {
+      "pagina": 119,
+      "texto": "Eso que ocurre en estas prácticas no se puede explicar del todo con palabras, pero se puede mostrar, sentir, compartir."
+    },
+    "boton": "Descargar libro",
+    "formato": "PDF · 20 MB",
+    "descargando": "Descargando…",
+    "impresion": "¿Necesitás la edición para imprimir? Escribile a la autora",
+    "aporteTitulo": "Aporte voluntario",
+    "aporteTexto": "Si te gustó el libro y querés apoyar el proyecto, podés hacer un aporte voluntario.",
+    "despedida": {
+      "pagina": 119,
+      "texto": "Gracias por haber estado disponible para observar."
+    }
+  },
+
+  "panel": {
+    "titulo": "¡Gracias!",
+    "texto": "Tu descarga está en camino. Si querés apoyar el proyecto, podés hacer un aporte voluntario.",
+    "cerrar": "Cerrar"
+  },
+
+  "aporte": {
+    "plataformas": [
+      { "id": "cafecito", "nombre": "Cafecito" },
+      { "id": "mercadopago", "nombre": "Mercado Pago" }
+    ]
+  },
+
+  "contacto": {
+    "_nota": "D13 PENDIENTE. La dirección se guarda partida y se arma recién al hacer click (R6.3). Mientras esté vacía, el enlace de R6 no se muestra.",
+    "usuario": "",
+    "dominio": "",
+    "asunto": "Movimiento — edición para impresión",
+    "cuerpo": "Hola Brisa, quisiera la edición para impresión de Movimiento para…"
+  }
+}
