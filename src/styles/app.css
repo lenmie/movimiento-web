@@ -1,0 +1,681 @@
+/* Dirección "Suspensión" (spec §3, §6): fondo oscuro, fotos a sangre, tipografía grande. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: var(--fuente-texto);
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-texto);
+  outline-offset: 3px;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: 75rem;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 3rem);
+}
+
+.etiqueta {
+  display: block;
+  font-family: var(--fuente-texto);
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-texto-2);
+  margin: 0 0 0.75rem;
+}
+
+.texto-2 {
+  color: var(--color-texto-2);
+}
+
+.seccion__titulo {
+  font-family: var(--fuente-titulo);
+  font-weight: 400;
+  font-size: clamp(2.25rem, 7vw, 4.5rem);
+  line-height: 1.05;
+  margin: 0 0 2.5rem;
+}
+
+/* ---------- Fotos (§6.2) ---------- */
+
+.foto {
+  display: block;
+  overflow: hidden;
+}
+
+.foto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.foto--ancha {
+  aspect-ratio: 3 / 2;
+  margin-top: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.fotos {
+  display: grid;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.fotos--fila2 {
+  grid-template-columns: 1fr;
+}
+.fotos--fila2 .foto {
+  aspect-ratio: 3 / 2;
+}
+
+.fotos--verticales {
+  grid-template-columns: repeat(2, 1fr);
+}
+.fotos--verticales .foto {
+  aspect-ratio: 0.66;
+}
+
+.fotos--cuadradas {
+  grid-template-columns: repeat(3, 1fr);
+}
+.fotos--cuadradas .foto {
+  aspect-ratio: 1;
+}
+
+.foto--retrato {
+  aspect-ratio: 0.78;
+}
+
+@media (min-width: 768px) {
+  .fotos--fila2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .fotos--verticales {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ---------- S1 Hero ---------- */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 4vw, 3rem) clamp(2rem, 6vw, 3.5rem);
+  overflow: hidden;
+}
+
+.hero__foto {
+  position: absolute;
+  inset: 0;
+}
+
+.hero__foto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 40%;
+}
+
+.hero__velo {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, var(--velo-foto), transparent 30%, transparent 45%, var(--color-fondo));
+}
+
+.hero__arriba,
+.hero__abajo {
+  position: relative;
+}
+
+.hero__arriba {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero__fecha {
+  display: none;
+}
+
+.hero__titulo {
+  margin: 0 0 1rem;
+  line-height: 0;
+}
+
+.hero__titulo img {
+  width: min(100%, 55rem);
+  height: auto;
+}
+
+.hero__bajada {
+  font-family: var(--fuente-titulo);
+  font-style: italic;
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  line-height: 1.3;
+  margin: 0 0 2rem;
+}
+
+@media (min-width: 1024px) {
+  .hero__fecha {
+    display: inline;
+  }
+  .hero__anio {
+    display: none;
+  }
+}
+
+/* Invitación a recorrer (R7) */
+
+.invitacion {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+}
+
+.invitacion__flecha {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: none;
+  border: 1px solid var(--color-texto-2);
+  border-radius: 50%; /* círculo del ícono (R7.1), no un borde redondeado de UI */
+}
+
+.invitacion__texto .etiqueta {
+  color: var(--color-texto);
+  margin: 0;
+}
+
+.invitacion__detalle {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--color-texto-2);
+}
+
+/* ---------- S2 Cita ---------- */
+
+.cita {
+  padding: var(--espacio-seccion) clamp(1rem, 4vw, 3rem);
+  scroll-margin-top: 0;
+}
+
+.cita blockquote {
+  max-width: 34ch;
+  margin: 0 auto;
+  font-family: var(--fuente-titulo);
+  font-style: italic;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  line-height: 1.3;
+  text-align: center;
+}
+
+/* ---------- S3–S5 Prácticas ---------- */
+
+.practica {
+  padding-top: var(--espacio-seccion);
+  border-top: 1px solid var(--color-linea);
+}
+
+.practica__titulo {
+  font-family: var(--fuente-titulo);
+  font-weight: 400;
+  line-height: 1;
+  margin: 0 0 clamp(2rem, 5vw, 3.5rem);
+}
+
+.practica__numeral {
+  display: block;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-style: italic;
+  color: var(--color-texto-2);
+  margin-bottom: 0.5rem;
+}
+
+.espejado {
+  display: inline-block;
+  font-size: clamp(3rem, 13vw, 9rem);
+}
+
+.practica__cuerpo {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.practica__texto {
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
+  max-width: 62ch;
+}
+
+.cronologia {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 1.25rem;
+  border-left: 1px solid var(--color-linea);
+  display: grid;
+  gap: 1.25rem;
+  font-size: 0.9375rem;
+  color: var(--color-texto-2);
+}
+
+.cronologia .etiqueta {
+  color: var(--color-texto);
+  margin-bottom: 0.25rem;
+}
+
+@media (min-width: 1024px) {
+  .practica__cuerpo {
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+  }
+}
+
+/* ---------- S6 Protagonistas ---------- */
+
+.protagonistas {
+  padding-block: var(--espacio-seccion);
+}
+
+.protagonistas__grilla {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 4px;
+}
+
+.protagonistas figure {
+  margin: 0;
+}
+
+.protagonistas figcaption {
+  padding-top: 0.75rem;
+  font-size: 0.9375rem;
+}
+
+.protagonistas figcaption .etiqueta {
+  margin-bottom: 0.125rem;
+}
+
+@media (min-width: 1024px) {
+  .protagonistas__grilla {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* ---------- S7 La autora y créditos ---------- */
+
+.autora {
+  padding-block: var(--espacio-seccion);
+  border-top: 1px solid var(--color-linea);
+}
+
+.autora__cuerpo {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.autora__retrato {
+  margin: 0;
+  max-width: 24rem;
+}
+
+.autora__retrato figcaption {
+  padding-top: 0.75rem;
+  font-family: var(--fuente-titulo);
+  font-size: 1.25rem;
+}
+
+.autora__textos {
+  max-width: 62ch;
+}
+
+.autora__textos h3 {
+  margin-top: 2.5rem;
+}
+
+.autora__textos h3:first-child {
+  margin-top: 0;
+}
+
+.creditos {
+  margin: 0 0 1rem;
+}
+
+.creditos div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-linea);
+}
+
+.creditos dt {
+  color: var(--color-texto-2);
+  font-size: 0.875rem;
+}
+
+.creditos dd {
+  margin: 0;
+}
+
+@media (min-width: 1024px) {
+  .autora__cuerpo {
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+  }
+  .creditos div {
+    grid-template-columns: 14rem 1fr;
+  }
+}
+
+/* ---------- S8 Cierre ---------- */
+
+.cierre {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: var(--espacio-seccion) clamp(1rem, 4vw, 3rem);
+  text-align: center;
+  overflow: hidden;
+}
+
+.cierre__fondo {
+  position: absolute;
+  inset: 0;
+}
+
+.cierre__fondo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Velo que se funde con el negro de la página arriba y abajo (§6.2). */
+.cierre__velo {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(var(--velo-foto), var(--velo-foto)),
+    linear-gradient(to bottom, var(--color-fondo), transparent 25%, transparent 70%, var(--color-fondo));
+}
+
+.cierre__contenido {
+  position: relative;
+  max-width: 40rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cierre__cita {
+  margin: 0 0 2.5rem;
+  font-family: var(--fuente-titulo);
+  font-style: italic;
+  font-size: clamp(1.375rem, 3.5vw, 2rem);
+  line-height: 1.3;
+}
+
+.cierre__logo {
+  width: min(100%, 30rem);
+  height: auto;
+  margin-bottom: 2.5rem;
+}
+
+.contador {
+  margin: 1rem 0 0;
+  font-size: 0.875rem;
+  color: var(--color-texto-2);
+}
+
+.enlace {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+  color: var(--color-texto-2);
+  text-underline-offset: 0.25em;
+}
+
+.enlace:hover {
+  color: var(--color-texto);
+}
+
+.cierre__linea {
+  width: 4rem;
+  margin: 2.5rem auto;
+  border: 0;
+  border-top: 1px solid var(--color-linea);
+}
+
+.aporte .texto-2 {
+  font-size: 0.9375rem;
+}
+
+.aporte__botones {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.cierre__despedida {
+  margin: 3rem 0 0;
+  font-family: var(--fuente-titulo);
+  font-style: italic;
+  font-size: 1.125rem;
+}
+
+/* ---------- Botones (§6.3) ---------- */
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 52px;
+  padding: 0 1.5rem;
+  border-radius: var(--radio);
+  font-family: var(--fuente-texto);
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+}
+
+.boton--principal {
+  background: var(--color-texto);
+  color: var(--color-fondo);
+  min-width: min(100%, 20rem);
+}
+
+.boton--principal:hover {
+  background: #fff; /* "blanco puro" (§6.3) */
+}
+
+.boton__formato {
+  opacity: 0.6;
+}
+
+.boton--secundario {
+  border: 1px solid var(--color-texto);
+  background: transparent;
+  color: var(--color-texto);
+}
+
+.boton--secundario:hover {
+  background: var(--color-texto);
+  color: var(--color-fondo);
+}
+
+.turnstile:empty {
+  display: none;
+}
+
+/* ---------- Panel de agradecimiento (R3) — invierte a claro (§6.1) ---------- */
+
+.panel {
+  position: fixed;
+  z-index: 10;
+  left: 1rem;
+  right: 1rem;
+  bottom: calc(1rem + env(safe-area-inset-bottom));
+  max-width: 26rem;
+  margin-left: auto;
+  padding: 1.5rem;
+  background: var(--color-texto);
+  color: var(--color-fondo);
+  text-align: left;
+}
+
+.panel:focus-visible {
+  outline-color: var(--color-fondo);
+}
+
+.panel__titulo {
+  font-family: var(--fuente-titulo);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.panel .aporte__botones {
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+
+.panel .boton--secundario {
+  border-color: var(--color-fondo);
+  color: var(--color-fondo);
+}
+
+.panel .boton--secundario:hover {
+  background: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+.panel :focus-visible {
+  outline-color: var(--color-fondo);
+}
+
+.panel__cerrar {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 0.875rem;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  cursor: pointer;
+}
+
+/* ---------- Movimiento (R4, R7) ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .invitacion__flecha svg {
+    animation: flecha 2.6s ease-in-out infinite;
+  }
+
+  /* Sin soporte de animaciones por scroll, todo se ve derecho y quieto (R4.3). */
+  @supports (animation-timeline: view()) {
+    .espejado {
+      animation: girar linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 45%;
+    }
+
+    .aparece {
+      animation: aparecer linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 70%;
+    }
+  }
+}
+
+@keyframes flecha {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(7px);
+  }
+}
+
+@keyframes girar {
+  from {
+    transform: perspective(60em) rotateY(180deg);
+  }
+  to {
+    transform: perspective(60em) rotateY(0deg);
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

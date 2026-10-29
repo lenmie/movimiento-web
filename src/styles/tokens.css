@@ -1,0 +1,15 @@
+/* Tokens de spec §6.1. No se agregan colores, sombras, radios ni fuentes. */
+:root {
+  --color-fondo: #0b0b0b;
+  --color-texto: #f2f2f2;
+  /* Rango del spec: .62–.85, nunca menos de .55 (contraste AA). */
+  --color-texto-2: rgba(255, 255, 255, 0.72);
+  --color-linea: rgba(255, 255, 255, 0.14);
+  --velo-foto: rgba(0, 0, 0, 0.5);
+
+  --fuente-titulo: 'Libre Bodoni', Georgia, serif;
+  --fuente-texto: 'Poppins', system-ui, sans-serif;
+
+  --radio: 0;
+  --espacio-seccion: clamp(4.5rem, 9vw, 7rem);
+}
