@@ -1,0 +1,49 @@
+{
+  "_nota": "Fotos del sitio en orden de aparición. origen: 'libro' (está en el PDF) o 'inedita' (no está en el libro). alt: texto alternativo (revisar con Brisa, §7). Todas en B/N, máx. 1800 px, JPEG q78; en Build se convierten a AVIF/WebP (§6.2).",
+  "portada": [
+    { "archivo": "fotos/portada/tapa.jpg", "origen": "libro", "pagina": 1, "alt": "Foto de tapa del libro: tres practicantes en una sala de entrenamiento, una en vertical de cabeza en el centro y otras dos en extensiones a los costados", "nota": "Solo 945 px en el PDF: pedir original (D11)" }
+  ],
+  "contorsion": [
+    { "archivo": "fotos/contorsion/01-ancha-puente-puntas.jpg", "origen": "inedita", "uso": "ancha", "alt": "Practicante en un puente hacia atrás en puntas de pie, con el pelo cayendo hasta el piso" },
+    { "archivo": "fotos/contorsion/02-vertical-rodillas.jpg", "origen": "inedita", "uso": "vertical", "alt": "Practicante cabeza abajo con los pies apoyados en una puerta y el rostro oculto" },
+    { "archivo": "fotos/contorsion/03-fragmento-piernas.jpg", "origen": "inedita", "uso": "vertical", "alt": "Fragmento de un cuerpo cabeza abajo: la cadera y una pierna extendida con calentador" },
+    { "archivo": "fotos/contorsion/04-vertical-puerta.jpg", "origen": "inedita", "uso": "vertical", "alt": "Practicante en vertical de manos contra una puerta, con el rostro en sombra" },
+    { "archivo": "fotos/contorsion/05-vertical-pelo.jpg", "origen": "inedita", "uso": "vertical", "alt": "Practicante cabeza abajo con el pelo largo cayendo hasta el piso, mientras otra descansa detrás en penumbra" }
+  ],
+  "acrobacia": [
+    { "archivo": "fotos/acrobacia/01-ancha-piernas-trapecio.jpg", "origen": "inedita", "uso": "ancha", "alt": "Piernas de una acróbata colgando sobre la barra de un trapecio, con su sombra en la pared" },
+    { "archivo": "fotos/acrobacia/02-trapecio-plegada.jpg", "origen": "inedita", "uso": "fila de 2", "alt": "Acróbata plegada cabeza abajo en un trapecio, con las rodillas al frente y el rostro oculto" },
+    { "archivo": "fotos/acrobacia/03-telas-subida.jpg", "origen": "inedita", "uso": "fila de 2", "alt": "Acróbata trepando una tela de espaldas, junto a otra tela anudada en primer plano" },
+    { "archivo": "fotos/acrobacia/04-pies-barra.jpg", "origen": "inedita", "uso": "cuadrada", "alt": "Pies enganchados en la barra de un trapecio, entre las sogas" },
+    { "archivo": "fotos/acrobacia/05-trapecio-movido.jpg", "origen": "inedita", "uso": "cuadrada", "alt": "Acróbata desenfocada colgada de un trapecio, frente a una ventana alta" },
+    { "archivo": "fotos/acrobacia/06-telas-puerta.jpg", "origen": "inedita", "uso": "cuadrada", "alt": "Una acróbata en telas vista a través de una puerta, mientras otras practicantes miran", "nota": "object-position: 40% center" }
+  ],
+  "danza": [
+    { "archivo": "fotos/danza/01-ancha-danza-piso.jpg", "origen": "inedita", "uso": "ancha", "alt": "Tres bailarinas encadenadas en un movimiento a ras del piso, con el pelo cubriéndoles el rostro" },
+    { "archivo": "fotos/danza/02-diagonal.jpg", "origen": "libro", "uso": "cuadrada", "alt": "Tres bailarinas avanzando en diagonal con los brazos extendidos" },
+    { "archivo": "fotos/danza/03-suspendidas.jpg", "origen": "libro", "uso": "cuadrada", "alt": "Dos bailarinas suspendidas en el aire en una sala con piso de madera" },
+    { "archivo": "fotos/danza/04-salto.jpg", "origen": "libro", "uso": "cuadrada", "alt": "Bailarinas en un salto horizontal, con una pierna estirada hacia atrás" }
+  ],
+  "protagonistas": [
+    { "archivo": "fotos/protagonistas/belen.jpg", "nombre": "Belén Romero", "apodo": "Cacho", "origen": "libro", "pagina": 123, "alt": "Belén Romero en equilibrio sobre una pierna, tomándose el pie por detrás, junto a una biblioteca" },
+    { "archivo": "fotos/protagonistas/carla.jpg", "nombre": "Carla Zabala", "rol": "Profesora", "origen": "libro", "pagina": 123, "alt": "Carla Zabala riendo, inclinada hacia adelante con las manos en las rodillas" },
+    { "archivo": "fotos/protagonistas/delfina.jpg", "nombre": "Delfina Muñoz", "apodo": "Chuzamun", "origen": "libro", "pagina": 124, "alt": "Delfina Muñoz de pie junto a una puerta, con un mate en la mano" },
+    { "archivo": "fotos/protagonistas/fabricio.jpg", "nombre": "Fabricio Gomez", "origen": "libro", "pagina": 124, "alt": "Fabricio Gomez apoyado sobre los antebrazos en una colchoneta, mirando al frente" },
+    { "archivo": "fotos/protagonistas/julieta.jpg", "nombre": "Julieta Romero", "origen": "libro", "pagina": 125, "alt": "Julieta Romero de pie entre dos telas aéreas" },
+    { "archivo": "fotos/protagonistas/lucia.jpg", "nombre": "Lucía Ispizua", "origen": "libro", "pagina": 125, "alt": "Lucía Ispizua sonriendo con una mano en la cintura" },
+    { "archivo": "fotos/protagonistas/malena.jpg", "nombre": "Malena Piñeiro", "origen": "libro", "pagina": 126, "alt": "Malena Piñeiro recostada de lado sobre el piso de madera" },
+    { "archivo": "fotos/protagonistas/mariel.jpg", "nombre": "Mariel Dulau", "apodo": "Gorda Kawaii", "origen": "libro", "pagina": 126, "alt": "Mariel Dulau de pie junto a una puerta, con un bolso cruzado" },
+    { "archivo": "fotos/protagonistas/melany.jpg", "nombre": "Melany Morbiducci", "origen": "libro", "pagina": 127, "alt": "Melany Morbiducci de perfil, sonriendo, con el pelo largo suelto" },
+    { "archivo": "fotos/protagonistas/candela.jpg", "nombre": "Candela Ramos", "origen": "libro", "pagina": 127, "alt": "Candela Ramos inclinada hacia adelante junto a una cuerda, con una pierna en alto" }
+  ],
+  "autora": [
+    { "archivo": "fotos/protagonistas/autora.jpg", "nombre": "Brisa Jazmín Arregui", "origen": "libro", "pagina": 122, "alt": "Brisa Jazmín Arregui sonriendo, recostada boca abajo sobre una colchoneta con las piernas flexionadas hacia arriba" }
+  ],
+  "logo": [
+    { "archivo": "logo/movimiento-blanco.svg", "uso": "sobre fondo oscuro y fotos" },
+    { "archivo": "logo/movimiento-negro.svg", "uso": "sobre fondo claro (color #231F20 del libro)" }
+  ],
+  "compartir": [
+    { "archivo": "compartir/og-1200x630.jpg", "uso": "og:image / twitter:image (R5)" }
+  ]
+}
