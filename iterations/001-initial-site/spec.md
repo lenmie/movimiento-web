@@ -48,7 +48,7 @@ botones (descarga, aporte, pedido por mail) están en el cierre (S8). El hero in
 | # | Sección | Contenido | Fuente |
 |---|---|---|---|
 | S1 | **Portada (hero)** | Foto de tapa a sangre · logotipo "MOVIMIENTO" (SVG) · "Libro de fotografías sobre prácticas corporales" · invitación a recorrer (R7). **Sin botones ni contador** | Foto de tapa del libro |
-| S2 | **Cita de apertura** | "El único requisito es estar disponible…" | Pág. 7 |
+| S2 | **Cita de apertura** | Te invito a sumergirte en estas páginas… | Texto definido para el sitio |
 | S3 | **I Contorsión** | Título espejado (R4), texto, cronología, foto ancha + grilla de 4 verticales | Texto: págs. 29–40 · Fotos: inéditas |
 | S4 | **II Acrobacia aérea** | Título espejado, texto, cronología, foto ancha + fila de 2 + grilla de 3 cuadradas | Texto: págs. 57–72 · Fotos: inéditas |
 | S5 | **III Danza** | Título espejado, texto, cronología, foto ancha + grilla de 3 cuadradas | Texto: págs. 91–102 · Fotos: 1 inédita + 3 del libro |
@@ -78,7 +78,7 @@ incluyen en el sitio.
 │     Al final, podés          │
 │     descargarlo completo     │
 ├──────────────────────────────┤
-│ “El único requisito es…”     │  S2
+│ Te invito a sumergirte…      │  S2
 ├──────────────────────────────┤
 │ I  nóisrotnoC → Contorsión   │  S3 · título espejado (R4)
 │ texto · cronología           │
@@ -114,7 +114,7 @@ incluyen en el sitio.
 
 ```
 ┌───────────────────────────────────────────────────────────┐
-│ BRISA JAZMÍN ARREGUI                 LA PLATA · JUNIO 2026 │
+│ BRISA JAZMÍN ARREGUI                      ARGENTINA · 2026 │
 │                                                           │
 │            [foto de tapa a sangre, ~880 px de alto]       │
 │                                                           │
@@ -348,7 +348,7 @@ aunque deje de contar (R1.5).
 | `--color-texto-2` | `rgba(255,255,255,.62–.85)` | Texto secundario (nunca menos de .55: contraste AA) |
 | `--color-linea` | `rgba(255,255,255,.14)` | Separadores |
 | `--velo-foto` | `rgba(0,0,0,.5)` | Velo sobre fotos a sangre con texto encima |
-| `--fuente-titulo` | Libre Bodoni (Regular, Italic) | Conceptos, prácticas, citas |
+| `--fuente-titulo` | Libre Bodoni (Regular, Italic; Bold Italic solo para el destacado de S2) | Conceptos, prácticas, citas |
 | `--fuente-texto` | Poppins (Light 300, Medium 500) | Cuerpo, etiquetas en mayúsculas, botones |
 | `--radio` | `0` | Sin bordes redondeados (como el libro) |
 | `--espacio-seccion` | `clamp(4.5rem, 9vw, 7rem)` | Aire entre secciones |

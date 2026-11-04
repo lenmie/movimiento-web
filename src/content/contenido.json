@@ -4,7 +4,7 @@
 
   "hero": {
     "autora": "Brisa Jazmín Arregui",
-    "lugarFecha": "La Plata · Junio 2026",
+    "lugarFecha": "Argentina · 2026",
     "anio": "2026",
     "bajada": "Libro de fotografías sobre prácticas corporales",
     "invitacion": "Recorré el libro",
@@ -12,8 +12,8 @@
   },
 
   "apertura": {
-    "pagina": 7,
-    "texto": "El único requisito es estar disponible: para mirar con calma, para conectar con el mundo corporal más allá de la pose final, de la figura perfecta o del resultado. Para dejarte conmover por los gestos, las respiraciones, los espacios que se abren."
+    "texto": "Te invito a sumergirte en estas páginas.\nA entrar en las prácticas, en sus ritmos y sus silencios.\nEspero que lo disfrutes, y que algo de este movimiento también te atraviese",
+    "destacado": "movimiento"
   },
 
   "practicas": [
@@ -75,7 +75,7 @@
   },
 
   "autora": {
-    "titulo": "La autora",
+    "titulo": "Autora",
     "nombre": "Brisa Jazmín Arregui",
     "notaEditorialTitulo": "Nota editorial",
     "notaEditorial": {
