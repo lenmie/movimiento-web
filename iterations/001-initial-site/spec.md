@@ -100,7 +100,7 @@ incluyen en el sitio.
 │ EL LIBRO · DESCARGA GRATUITA │
 │ MOVIMIENTO (logotipo)        │
 │ ┌──────────────────────────┐ │
-│ │ ↓ DESCARGAR LIBRO  20 MB │ │  ← R1, único botón de descarga
+│ │ ↓ DESCARGAR LIBRO  33 MB │ │  ← R1, único botón de descarga
 │ └──────────────────────────┘ │
 │ 1.284 descargas              │  ← R2
 │ ¿Querés una copia impresa?   │  ← R6
@@ -138,7 +138,7 @@ incluyen en el sitio.
 │              [foto a sangre con velo, centrado]           │
 │              EL LIBRO · DESCARGA LIBRE Y GRATUITA         │
 │                    MOVIMIENTO (logotipo)                  │
-│              [↓ DESCARGAR LIBRO · PDF 20 MB]              │
+│              [↓ DESCARGAR LIBRO · PDF 33 MB]              │
 │                     1.284 descargas                       │
 │                ¿Querés una copia impresa?                 │
 │              [ESCRIBIME] [ícono INSTAGRAM]                │
@@ -158,8 +158,8 @@ móviles —inicio, cierre y después de descargar—, hoja de estados y vista p
 ### R1 — Descarga
 
 - R1.1 Hay **un solo botón de descarga**, en el cierre (S8). Dice **"Descargar libro"** y muestra
-  formato y peso ("PDF · 20 MB").
-- R1.2 Apunta a `GET /descargar`. Se ofrece **una sola edición**: la web (~20 MB, D1).
+  formato y peso ("PDF · 33 MB").
+- R1.2 Apunta a `GET /descargar`. Se ofrece **una sola edición**: la web (33 MB, D1).
   La edición para impresión no se publica; se pide por mail (R6). Al hacer click, el script agrega el token de verificación (R2.4) y el origen (R2.7) a la URL.
 - R1.3 El Worker registra la descarga si corresponde (R2) y **sirve el PDF directamente desde R2**
   (binding del Worker, en streaming). El bucket no es público: no se usa `r2.dev` ni dominio propio,
@@ -350,7 +350,7 @@ dentro del límite gratuito y no se cobra nada (D14).
 | Cloudflare Pages | Sitio estático, subdominio `*.pages.dev` | Requests estáticos sin límite | — |
 | Cloudflare Workers (Pages Functions) | `/descargar`, `/api/contador`, `/aporte/*` | 100.000 requests/día · 10 ms de CPU por invocación | El streaming del PDF y `siteverify` son espera de red, no CPU |
 | Cloudflare D1 | Base del contador | 5 M filas leídas/día · 100.000 escritas/día · 5 GB | 2 escrituras por descarga → hasta ~50.000 descargas/día |
-| Cloudflare R2 | El PDF web (~20 MB) | 10 GB · 1 M operaciones A y 10 M B por mes · salida de datos gratis · **requiere medio de pago registrado** (D14) | ~0,02 GB usados |
+| Cloudflare R2 | El PDF web (33 MB) | 10 GB · 1 M operaciones A y 10 M B por mes · salida de datos gratis · **requiere medio de pago registrado** (D14) | ~0,03 GB usados |
 | Cloudflare Turnstile | Captcha invisible | Gratis | — |
 | Cloudflare Web Analytics | Visitas sin cookies | Gratis | — |
 | GitHub | Repositorio | Gratis | — |
@@ -400,7 +400,7 @@ aunque deje de contar (R1.5).
 ### 6.3 Botón principal
 
 - Fondo `--color-texto` (#F2F2F2), texto `--color-fondo`, Poppins Medium 12–15 px (según el ancho) en mayúsculas con
-  espaciado .14em, alto mínimo 64 px, ícono ↓ y "PDF · 20 MB" en gris.
+  espaciado .14em, alto mínimo 64 px, ícono ↓ y "PDF · 33 MB" en gris.
 - Hover: blanco puro. Foco: contorno de 2 px claro. Tras el click: "Descargando…" 2 s y vuelve.
 - Botones secundarios (Aporte, Cafecito, Mercado Pago, Escribime, Instagram): borde 1 px claro, fondo transparente; hover invierte.
 
@@ -463,7 +463,7 @@ Cada una tiene un valor por defecto; si nadie objeta, el spec avanza con ese val
 
 | # | Decisión | Por defecto | Notas |
 |---|---|---|---|
-| D1 | ¿Qué edición se publica? | **Decidido:** solo la web (~20 MB, estimado a 150 dpi). La de impresión (399 MB) se pide por mail (R6) | Brisa exporta la edición web desde InDesign |
+| D1 | ¿Qué edición se publica? | **Decidido:** solo la web (33 MB, en dobles páginas). La de impresión (399 MB) se pide por mail (R6) | Brisa exporta la edición web desde InDesign |
 | D2 | Infraestructura | **Decidido:** Cloudflare Pages + Workers + D1 + R2 + Turnstile, todo en plan gratuito (§5.2) | — |
 | D3 | Plataforma de aporte | Cafecito y Mercado Pago | Recomendación: empezar con la que más use el público de Brisa |
 | D4 | Dominio | Subdominio gratuito (`movimiento-2uc.pages.dev`; `movimiento.pages.dev` estaba tomado) | Un dominio propio tiene costo anual: queda fuera mientras rija "todo gratis" |
