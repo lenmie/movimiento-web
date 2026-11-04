@@ -47,11 +47,11 @@ botones (descarga, aporte, pedido por mail) están en el cierre (S8). El hero in
 
 | # | Sección | Contenido | Fuente |
 |---|---|---|---|
-| S1 | **Portada (hero)** | Foto de tapa a sangre · logotipo "MOVIMIENTO" (SVG) · "Libro de fotografías sobre prácticas corporales" · invitación a recorrer (R7). **Sin botones ni contador** | Foto de tapa del libro |
-| S2 | **Cita de apertura** | Te invito a sumergirte en estas páginas… | Texto definido para el sitio |
-| S3 | **I Contorsión** | Título espejado (R4), texto, cronología, foto ancha + grilla de 4 verticales | Texto: págs. 29–40 · Fotos: inéditas |
+| S1 | **Portada (hero)** | Foto inédita a sangre · logotipo "MOVIMIENTO" (SVG) · "Libro de fotografías sobre prácticas corporales" · invitación a recorrer (R7). **Sin botones ni contador** | Foto inédita |
+| S2 | **Cita de apertura** | Te invito a sumergirte en estas páginas… (fragmentos) | Pág. 7 |
+| S3 | **I Contorsión** | Título espejado (R4), texto, cronología, foto ancha + grilla de 4 verticales | Texto: págs. 29–40 · Fotos: inéditas + 1 del libro |
 | S4 | **II Acrobacia aérea** | Título espejado, texto, cronología, foto ancha + fila de 2 + grilla de 3 cuadradas | Texto: págs. 57–72 · Fotos: inéditas |
-| S5 | **III Danza** | Título espejado, texto, cronología, foto ancha + grilla de 3 cuadradas | Texto: págs. 91–102 · Fotos: 1 inédita + 3 del libro |
+| S5 | **III Danza** | Título espejado, texto, cronología, foto ancha + grilla de 3 cuadradas | Texto: págs. 91–102 · Fotos: 2 inéditas + 2 del libro |
 | S6 | **Protagonistas** | 10 retratos con nombre (D7) | Págs. 122–127 |
 | S7 | **La autora y créditos** | Retrato, bio factual, créditos, agradecimientos, memoria académica | Págs. 2, 122, 128 |
 | S7b | **Así es el libro** | 5 fotos del libro impreso (R9), sin botones | Fotos del libro impreso |
@@ -69,7 +69,7 @@ incluyen en el sitio.
 ┌──────────────────────────────┐
 │ BRISA JAZMÍN ARREGUI   2026  │
 │                              │
-│  [foto de tapa a sangre,     │
+│  [foto inédita a sangre,     │
 │   pantalla completa]         │
 │                              │
 │ MOVIMIENTO  (logotipo SVG)   │
@@ -119,7 +119,7 @@ incluyen en el sitio.
 ┌───────────────────────────────────────────────────────────┐
 │ BRISA JAZMÍN ARREGUI                      ARGENTINA · 2026 │
 │                                                           │
-│            [foto de tapa a sangre, ~880 px de alto]       │
+│            [foto inédita a sangre, ~880 px de alto]       │
 │                                                           │
 │ MOVIMIENTO  (logotipo SVG, casi todo el ancho)            │
 │ Libro de fotografías sobre prácticas corporales           │
@@ -385,19 +385,17 @@ aunque deje de contar (R1.5).
 
 ### 6.2 Fotografía
 
-- Todas las fotos en blanco y negro. Recortes: a sangre (3:2, proporción original), fila de 2 (3:2),
+- Todas las fotos en blanco y negro. Recortes: a sangre (3:2, proporción original; la de Danza, recortada arriba: casi 2:1), fila de 2 (3:2),
   cuadrado 1:1, vertical 0,66 y retrato 0,78.
 - Fuente preferida: archivos originales de los fotógrafos; alternativa: exportar desde el PDF.
 - El cierre (S8) usa de fondo una inédita: la practicante tendida en el piso, con un velo oscuro que
   se funde con el negro de la página arriba y abajo.
-- La portada usa la misma foto de tapa del libro. Contorsión y Acrobacia aérea usan fotos **inéditas** (que no están en el libro), elegidas por
+- La portada usa una foto inédita de danza (no la tapa del libro). Contorsión (salvo una) y Acrobacia aérea usan fotos **inéditas** (que no están en el libro), elegidas por
   su tono misterioso (rostros ocultos, sombras, fragmentos, movimiento) para invitar a descargar.
-  Danza usa una inédita como foto ancha y conserva tres del libro; Protagonistas sigue con fotos del libro.
-- La foto de tapa solo existe en el PDF a 945 px: se ve blanda a ancho completo en escritorio.
-  Pedir el archivo original (D11).
+  Danza usa dos inéditas (la foto ancha y una cuadrada) y conserva dos del libro; Protagonistas sigue con fotos del libro.
 - Originales en `assets/fotos/` hasta 1800 px de lado. El build genera AVIF con respaldo WebP en
   480 / 960 / 1600 px (`srcset`), ≤ 250 KB cada variante.
-- Todas con `width`/`height` declarados y `loading="lazy"` salvo la tapa.
+- Todas con `width`/`height` declarados y `loading="lazy"` salvo la portada.
 
 ### 6.3 Botón principal
 
@@ -475,7 +473,7 @@ Cada una tiene un valor por defecto; si nadie objeta, el spec avanza con ese val
 | D8 | ¿Hay URL pública de la memoria académica? | No se enlaza hasta tenerla | — |
 | D9 | ¿Versión en inglés? | No (fuera de alcance en `intent.md`) | El borrador "Suspensión" tenía selector ES/EN; se quitó |
 | D10 | Créditos de las fotos inéditas | Alejo Azzarini · Isabella Jubany | Confirmar autoría de cada inédita |
-| D11 | Foto de tapa en alta resolución | Se usa la del PDF (945 px) | Conseguir el original antes de publicar |
+| D11 | Foto de portada | **Decidido:** una inédita en alta resolución (reemplaza a la tapa de 945 px del PDF) | La imagen para compartir (R5) sigue usando la tapa |
 | D13 | Mail de contacto de Brisa | **Decidido:** cuenta creada solo para el libro; la dirección va partida en `contenido.json` (R6.3) | No se escribe entera en el repo |
 | D12 | ¿Quién entrega el PDF? | **Decidido:** el Worker, en streaming desde R2 (R1.3). Sin descargas reanudables: siempre envía el archivo completo | Descartado: redirigir a `r2.dev`. Era más simple, pero expone un enlace público que saltea el contador, y Cloudflare lo marca solo para desarrollo |
 | D14 | ¿Medio de pago para R2? | **Decidido:** se registra uno en Cloudflare. R2 no se activa sin tarjeta o PayPal; el uso queda dentro del límite gratuito, sin cargos | Descartado: servir el PDF como archivo de Pages (límite 25 MB por archivo), que cambiaba R1.3 y D12 |

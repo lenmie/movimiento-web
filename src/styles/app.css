@@ -83,7 +83,6 @@ p {
 }
 
 .foto--ancha {
-  aspect-ratio: 3 / 2;
   margin-top: clamp(2.5rem, 6vw, 4.5rem);
 }
 

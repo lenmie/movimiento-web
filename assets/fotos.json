@@ -2,11 +2,10 @@
   "_nota": "Fotos del sitio en orden de aparición. origen: 'libro' (está en el PDF) o 'inedita' (no está en el libro). alt: texto alternativo (revisar con Brisa, §7). Todas en B/N, máx. 1800 px, JPEG q78; en Build se convierten a AVIF/WebP (§6.2).",
   "portada": [
     {
-      "archivo": "fotos/portada/tapa.jpg",
-      "origen": "libro",
-      "pagina": 1,
-      "alt": "Foto de tapa del libro: tres practicantes en una sala de entrenamiento, una en vertical de cabeza en el centro y otras dos en extensiones a los costados",
-      "nota": "Solo 945 px en el PDF: pedir original (D11)"
+      "archivo": "fotos/portada/tres-bailarinas.jpg",
+      "origen": "inedita",
+      "alt": "Tres bailarinas en una sala con piso de madera, cada una en equilibrio sobre un pie, con una rodilla en alto y un brazo arqueado sobre la cabeza",
+      "nota": "object-position: 92% 40%"
     }
   ],
   "contorsion": [
@@ -23,30 +22,30 @@
       "alt": "Practicante cabeza abajo con los pies apoyados en una puerta y el rostro oculto"
     },
     {
-      "archivo": "fotos/contorsion/03-fragmento-piernas.jpg",
-      "origen": "inedita",
+      "archivo": "fotos/contorsion/03-vertical-espalda.jpg",
+      "origen": "libro",
       "uso": "vertical",
-      "alt": "Fragmento de un cuerpo cabeza abajo: la cadera y una pierna extendida con calentador"
+      "alt": "Practicante de espaldas, sentada en el piso con una malla negra, lleva un pie hacia la cabeza y lo sostiene con las dos manos"
     },
     {
-      "archivo": "fotos/contorsion/04-vertical-puerta.jpg",
+      "archivo": "fotos/contorsion/04-vertical-dos-cuerpos.jpg",
       "origen": "inedita",
       "uso": "vertical",
-      "alt": "Practicante en vertical de manos contra una puerta, con el rostro en sombra"
+      "alt": "Dos practicantes en posturas invertidas apoyan las manos en el piso, una con el pelo largo cayendo, mientras otra persona observa atrás"
     },
     {
-      "archivo": "fotos/contorsion/05-vertical-pelo.jpg",
+      "archivo": "fotos/contorsion/05-vertical-equilibrio.jpg",
       "origen": "inedita",
       "uso": "vertical",
-      "alt": "Practicante cabeza abajo con el pelo largo cayendo hasta el piso, mientras otra descansa detrás en penumbra"
+      "alt": "Practicante con camiseta a rayas en equilibrio sobre las manos, con las piernas plegadas sobre los brazos y la cabeza cerca del piso"
     }
   ],
   "acrobacia": [
     {
-      "archivo": "fotos/acrobacia/01-ancha-piernas-trapecio.jpg",
+      "archivo": "fotos/acrobacia/01-ancha-colgada-soga.jpg",
       "origen": "inedita",
       "uso": "ancha",
-      "alt": "Piernas de una acróbata colgando sobre la barra de un trapecio, con su sombra en la pared"
+      "alt": "Acróbata cabeza abajo en un trapecio, sostenida de una soga con una mano, con el pelo largo cayendo y su sombra en la pared"
     },
     {
       "archivo": "fotos/acrobacia/02-trapecio-plegada.jpg",
@@ -67,10 +66,10 @@
       "alt": "Pies enganchados en la barra de un trapecio, entre las sogas"
     },
     {
-      "archivo": "fotos/acrobacia/05-trapecio-movido.jpg",
+      "archivo": "fotos/acrobacia/05-piernas-tela.jpg",
       "origen": "inedita",
       "uso": "cuadrada",
-      "alt": "Acróbata desenfocada colgada de un trapecio, frente a una ventana alta"
+      "alt": "Piernas con medias a rayas envueltas en una tela, suspendidas en el aire"
     },
     {
       "archivo": "fotos/acrobacia/06-telas-puerta.jpg",
@@ -100,10 +99,10 @@
       "alt": "Dos bailarinas suspendidas en el aire en una sala con piso de madera"
     },
     {
-      "archivo": "fotos/danza/04-salto.jpg",
-      "origen": "libro",
+      "archivo": "fotos/danza/04-inclinadas.jpg",
+      "origen": "inedita",
       "uso": "cuadrada",
-      "alt": "Bailarinas en un salto horizontal, con una pierna estirada hacia atrás"
+      "alt": "Dos bailarinas inclinadas hacia adelante en una sala, con el pelo largo cayendo y un brazo extendido"
     }
   ],
   "protagonistas": [

@@ -5,7 +5,7 @@ interface Props {
   /** Atributo `sizes` según el ancho que ocupa en pantalla. */
   sizes: string
   className?: string
-  /** Solo la tapa se carga sin esperar (§6.2). */
+  /** Solo la portada se carga sin esperar (§6.2). */
   prioritaria?: boolean
 }
 

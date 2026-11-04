@@ -3,12 +3,12 @@ import { Foto } from './Foto'
 
 const { hero } = contenido
 
-/** S1: tapa a sangre, logotipo y la invitación a recorrer. Sin botones ni contador (R7). */
+/** S1: foto a sangre, logotipo y la invitación a recorrer. Sin botones ni contador (R7). */
 export function Hero() {
-  const [tapa] = fotosDe('portada')
+  const [portada] = fotosDe('portada')
   return (
     <header className="hero">
-      <Foto foto={tapa} sizes="100vw" className="hero__foto" prioritaria />
+      <Foto foto={portada} sizes="(max-aspect-ratio: 3/2) 150vh, 100vw" className="hero__foto" prioritaria />
       <div className="hero__velo" />
       <div className="hero__arriba">
         <span>{hero.autora}</span>
