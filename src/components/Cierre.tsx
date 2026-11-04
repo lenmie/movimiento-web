@@ -51,6 +51,7 @@ export function Cierre({ origen }: { origen: Origen }) {
   const cerrarPanel = useCallback(() => setPanelAbierto(false), [])
   const textoContador = formatearDescargas(total)
   const [fondo] = fotosDe('cierre')
+  const conMail = hayContacto(contacto)
 
   return (
     <section id="descargar" ref={seccion} className="cierre" aria-label={cierre.etiqueta}>
@@ -81,14 +82,30 @@ export function Cierre({ origen }: { origen: Origen }) {
           </p>
         )}
 
-        {hayContacto(contacto) && (
-          <div className="impresion">
-            <p className="texto-2">{cierre.impresionPregunta}</p>
-            <button type="button" className="boton boton--secundario" onClick={alPedirImpresion}>
-              {cierre.impresionBoton}
-            </button>
+        <div className="impresion">
+          {conMail && <p className="texto-2">{cierre.impresionPregunta}</p>}
+          <div className="impresion__botones">
+            {conMail && (
+              <button type="button" className="boton boton--secundario boton--grande" onClick={alPedirImpresion}>
+                {cierre.impresionBoton}
+              </button>
+            )}
+            <a
+              className="boton boton--secundario boton--grande"
+              href={instagram.url}
+              target="_blank"
+              rel="noopener"
+              aria-label={instagram.etiqueta}
+            >
+              <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" strokeWidth="1.5" />
+                <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" strokeWidth="1.5" />
+                <circle cx="17.25" cy="6.75" r="1.1" fill="currentColor" />
+              </svg>
+              {instagram.nombre}
+            </a>
           </div>
-        )}
+        </div>
 
         <hr className="cierre__linea" />
 
@@ -99,20 +116,6 @@ export function Cierre({ origen }: { origen: Origen }) {
         </div>
 
         <p className="cierre__despedida">{cierre.despedida.texto}</p>
-
-        <a
-          className="boton boton--secundario boton--icono"
-          href={instagram.url}
-          target="_blank"
-          rel="noopener"
-          aria-label={instagram.etiqueta}
-        >
-          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-            <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" strokeWidth="1.5" />
-            <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" strokeWidth="1.5" />
-            <circle cx="17.25" cy="6.75" r="1.1" fill="currentColor" />
-          </svg>
-        </a>
       </div>
 
       <PanelGracias abierto={panelAbierto} alCerrar={cerrarPanel} />

@@ -18,7 +18,7 @@ export interface FotoInfo {
   anchos: number[]
 }
 
-export type Seccion = 'portada' | 'contorsion' | 'acrobacia' | 'danza' | 'protagonistas' | 'autora' | 'cierre'
+export type Seccion = 'portada' | 'contorsion' | 'acrobacia' | 'danza' | 'protagonistas' | 'autora' | 'libro' | 'cierre'
 
 export function fotosDe(seccion: Seccion): FotoInfo[] {
   return (fotos as Record<string, FotoInfo[]>)[seccion] ?? []

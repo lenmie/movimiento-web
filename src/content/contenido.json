@@ -105,6 +105,10 @@
     }
   },
 
+  "libro": {
+    "titulo": "Así es el libro"
+  },
+
   "cierre": {
     "etiqueta": "El libro · Descarga libre y gratuita",
     "boton": "Descargar libro",
@@ -135,6 +139,7 @@
 
   "instagram": {
     "url": "https://www.instagram.com/movimiento.libro/",
+    "nombre": "Instagram",
     "etiqueta": "Seguir a Movimiento en Instagram"
   },
 

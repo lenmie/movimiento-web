@@ -21,6 +21,12 @@ test('la invitación lleva a la cita de apertura (R7.1)', async ({ page }) => {
   await expect(page.locator('#recorrido')).toBeInViewport()
 })
 
+test('las fotos del libro van justo antes del cierre (R9)', async ({ page }) => {
+  await page.goto('/')
+  await expect(page.locator('section.libro picture')).toHaveCount(5)
+  await expect(page.locator('section.libro + #descargar')).toHaveCount(1)
+})
+
 test('el lector de pantalla lee los títulos reales (R4.2)', async ({ page }) => {
   await page.goto('/')
   for (const titulo of ['Contorsión', 'Acrobacia aérea', 'Danza'])

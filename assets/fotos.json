@@ -191,6 +191,33 @@
       "alt": "Brisa Jazmín Arregui sonriendo, recostada boca abajo sobre una colchoneta con las piernas flexionadas hacia arriba"
     }
   ],
+  "libro": [
+    {
+      "archivo": "fotos/libro/01-trapecio.jpg",
+      "origen": "libro",
+      "alt": "Libro abierto visto desde arriba, con una foto a doble página: dos manos toman una barra de trapecio y atrás se ven las piernas de la practicante"
+    },
+    {
+      "archivo": "fotos/libro/02-apertura.jpg",
+      "origen": "libro",
+      "alt": "Libro abierto en la página de apertura, con el logotipo Movimiento, el subtítulo Libro de fotografías sobre prácticas corporales y el nombre de Brisa Jazmín Arregui, junto a la página de créditos"
+    },
+    {
+      "archivo": "fotos/libro/03-secuencia.jpg",
+      "origen": "libro",
+      "alt": "Libro abierto en una secuencia de fotos a contraluz de una practicante que estira una pierna hacia atrás frente a un ventanal"
+    },
+    {
+      "archivo": "fotos/libro/04-acrobacia.jpg",
+      "origen": "libro",
+      "alt": "Libro abierto en una doble página de acrobacia aérea: a la izquierda, una practicante suspendida de una tela; a la derecha, un texto y una foto de sus piernas en el aire"
+    },
+    {
+      "archivo": "fotos/libro/05-contorsion.jpg",
+      "origen": "libro",
+      "alt": "Libro abierto en una doble página de contorsión: a la izquierda, una practicante de espaldas lleva un pie hacia la cabeza; a la derecha, un texto"
+    }
+  ],
   "cierre": [
     {
       "archivo": "fotos/cierre/fondo-suelo.jpg",

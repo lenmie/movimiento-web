@@ -467,12 +467,22 @@ p {
 }
 
 .impresion {
+  width: 100%;
   margin-top: 2.5rem;
 }
 
 .impresion p {
   margin: 0 0 1rem;
   font-size: 0.9375rem;
+}
+
+/* Mismo ancho que el botón de descarga; en teléfonos, uno debajo del otro. */
+.impresion__botones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  gap: 0.75rem;
+  width: min(100%, 26rem);
+  margin: 0 auto;
 }
 
 .cierre__linea {
@@ -501,6 +511,27 @@ p {
   font-family: var(--fuente-titulo);
   font-style: italic;
   font-size: 1.125rem;
+}
+
+/* ---------- S7b El libro (R9) ---------- */
+
+.libro {
+  padding-block: var(--espacio-seccion);
+}
+
+.libro__grilla {
+  display: grid;
+  gap: 4px;
+}
+
+@media (min-width: 768px) {
+  .libro__grilla {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .libro__grilla > :first-child {
+    grid-column: 1 / -1;
+  }
 }
 
 /* ---------- Botones (§6.3) ---------- */
@@ -554,10 +585,10 @@ p {
   color: var(--color-fondo);
 }
 
-.boton--icono {
-  width: 52px;
-  padding: 0;
-  margin-top: 1.5rem;
+.boton--grande {
+  min-height: 60px;
+  padding: 0 1rem;
+  font-size: 0.875rem;
 }
 
 .turnstile:empty {

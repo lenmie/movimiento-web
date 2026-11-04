@@ -54,7 +54,8 @@ botones (descarga, aporte, pedido por mail) están en el cierre (S8). El hero in
 | S5 | **III Danza** | Título espejado, texto, cronología, foto ancha + grilla de 3 cuadradas | Texto: págs. 91–102 · Fotos: 1 inédita + 3 del libro |
 | S6 | **Protagonistas** | 10 retratos con nombre (D7) | Págs. 122–127 |
 | S7 | **La autora y créditos** | Retrato, bio factual, créditos, agradecimientos, memoria académica | Págs. 2, 122, 128 |
-| S8 | **Cierre: el libro** (`#descargar`) | Foto inédita a sangre con velo · "El libro · Descarga libre y gratuita" · logotipo blanco · **botón Descargar** · contador · pedido de la edición para impresión (R6) · aporte voluntario con Cafecito / Mercado Pago (`#aporte`, R3) · "Gracias por haber estado disponible para observar." · ícono de Instagram (R8) | Cita: pág. 119 |
+| S7b | **Así es el libro** | 5 fotos del libro impreso (R9), sin botones | Fotos del libro impreso |
+| S8 | **Cierre: el libro** (`#descargar`) | Foto inédita a sangre con velo · "El libro · Descarga libre y gratuita" · logotipo blanco · **botón Descargar** · contador · pedido de la edición para impresión (R6) y botón de Instagram (R8) · aporte voluntario con Cafecito / Mercado Pago (`#aporte`, R3) · "Gracias por haber estado disponible para observar." | Cita: pág. 119 |
 
 No hay barra fija ni botones flotantes: la única forma de descargar es llegar al cierre.
 
@@ -93,6 +94,8 @@ incluyen en el sitio.
 │ Protagonistas                │  S6
 │ La autora y créditos         │  S7
 ├──────────────────────────────┤
+│ Así es el libro (5 fotos)    │  S7b · R9
+├──────────────────────────────┤
 │ [foto a sangre con velo]     │  S8 · cierre
 │ EL LIBRO · DESCARGA GRATUITA │
 │ MOVIMIENTO (logotipo)        │
@@ -101,11 +104,12 @@ incluyen en el sitio.
 │ └──────────────────────────┘ │
 │ 1.284 descargas              │  ← R2
 │ ¿Querés una copia impresa?   │  ← R6
+│ [ESCRIBIME]                  │
+│ [ícono INSTAGRAM]            │  ← R8
 │ ────────                     │
 │ Aporte voluntario            │
 │ [Cafecito] [Mercado Pago]    │  ← R3
 │ Gracias por haber estado…    │
-│ [ícono Instagram]            │  ← R8
 └──────────────────────────────┘
 ```
 
@@ -129,16 +133,18 @@ incluyen en el sitio.
 │ II y III con el mismo patrón · Protagonistas (5 × 2) ·    │
 │ La autora y créditos                                      │
 ├───────────────────────────────────────────────────────────┤
+│              Así es el libro (5 fotos, R9)                │
+├───────────────────────────────────────────────────────────┤
 │              [foto a sangre con velo, centrado]           │
 │              EL LIBRO · DESCARGA LIBRE Y GRATUITA         │
 │                    MOVIMIENTO (logotipo)                  │
 │              [↓ DESCARGAR LIBRO · PDF 20 MB]              │
 │                     1.284 descargas                       │
-│          ¿Querés una copia impresa? [ESCRIBIME]           │
+│                ¿Querés una copia impresa?                 │
+│              [ESCRIBIME] [ícono INSTAGRAM]                │
 │                        ────────                           │
 │     Si te gustó… aporte voluntario  [Cafecito] [M. Pago]  │
 │          Gracias por haber estado disponible…             │
-│                    [ícono Instagram]                      │
 └───────────────────────────────────────────────────────────┘
 ```
 
@@ -281,13 +287,22 @@ La página funciona como adelanto: se descubre bajando, y la descarga es la reco
 
 ### R8 — Instagram
 
-- R8.1 Al final del cierre (S8), debajo de la despedida, un botón secundario solo con el ícono de Instagram
-  (dibujado en SVG, sin scripts de terceros) que abre `https://www.instagram.com/movimiento.libro/` en una
+- R8.1 En el cierre (S8), al lado de "Escribime" y del mismo tamaño (en teléfono, debajo), un botón secundario con el ícono de Instagram
+  (dibujado en SVG, sin scripts de terceros) y la palabra **"Instagram"** al lado, que abre `https://www.instagram.com/movimiento.libro/` en una
   pestaña nueva, con `rel="noopener"`.
 - R8.2 Para lectores de pantalla se llama **"Seguir a Movimiento en Instagram"**.
 
 **Aceptación**
 - [ ] Click → se abre el perfil de Instagram en una pestaña nueva.
+
+### R9 — Fotos del libro impreso
+
+- R9.1 Entre la autora (S7) y el cierre (S8), la sección **"Así es el libro"** muestra 5 fotos del libro impreso:
+  una ancha y dos filas de dos (en teléfono, una debajo de la otra).
+- R9.2 Sirve para que se entienda qué se descarga: el botón de descarga sigue siendo uno solo, en S8.
+
+**Aceptación**
+- [ ] Las fotos aparecen justo antes del cierre.
 
 ---
 
