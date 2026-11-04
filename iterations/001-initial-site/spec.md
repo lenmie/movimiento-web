@@ -317,14 +317,16 @@ Cada descarga contada hace dos escrituras en una misma transacción (`INSERT` en
 
 ### 5.2 Infraestructura: todo en planes gratuitos
 
-**Costo de operación: $0.** Ningún servicio puede requerir tarjeta de crédito ni plan pago.
+**Costo de operación: $0.** Ningún servicio puede requerir plan pago. Única excepción a "sin tarjeta": R2 exige
+registrar un medio de pago (tarjeta o PayPal) para activarse; queda registrado, pero el uso se mantiene
+dentro del límite gratuito y no se cobra nada (D14).
 
 | Servicio | Uso | Límite gratuito relevante (verificado oct. 2026) | Holgura |
 |---|---|---|---|
 | Cloudflare Pages | Sitio estático, subdominio `*.pages.dev` | Requests estáticos sin límite | — |
 | Cloudflare Workers (Pages Functions) | `/descargar`, `/api/contador`, `/aporte/*` | 100.000 requests/día · 10 ms de CPU por invocación | El streaming del PDF y `siteverify` son espera de red, no CPU |
 | Cloudflare D1 | Base del contador | 5 M filas leídas/día · 100.000 escritas/día · 5 GB | 2 escrituras por descarga → hasta ~50.000 descargas/día |
-| Cloudflare R2 | El PDF web (~20 MB) | 10 GB · 1 M operaciones A y 10 M B por mes · salida de datos gratis | ~0,02 GB usados |
+| Cloudflare R2 | El PDF web (~20 MB) | 10 GB · 1 M operaciones A y 10 M B por mes · salida de datos gratis · **requiere medio de pago registrado** (D14) | ~0,02 GB usados |
 | Cloudflare Turnstile | Captcha invisible | Gratis | — |
 | Cloudflare Web Analytics | Visitas sin cookies | Gratis | — |
 | GitHub | Repositorio | Gratis | — |
@@ -390,7 +392,7 @@ aunque deje de contar (R1.5).
 | **Marca** | Solo tokens de §6; sin colores, sombras ni fuentes nuevas. | Brisa |
 | **Accesibilidad** | WCAG 2.2 AA. Contraste ≥ 4.5:1. Todas las fotos con texto alternativo descriptivo (escrito o revisado por Brisa). Navegable por teclado. | Javi |
 | **Privacidad** | Sin cookies ni almacenamiento en el dispositivo (ni `localStorage` ni `sessionStorage`), sin IP, sin rastreadores. Analítica: Cloudflare Web Analytics (sin cookies). Ver §7.1. | Javi |
-| **Costo** | Todo en planes gratuitos, sin tarjeta de crédito (§5.2). | Javi |
+| **Costo** | Todo en planes gratuitos; sin tarjeta, salvo la que exige R2 para activarse, sin cargos (§5.2, D14). | Javi |
 | **Rendimiento** | Sin metas de rendimiento en v1 (pospuesto). Fotos fuera de la primera pantalla con `loading="lazy"`. | Javi |
 | **Seguridad** | Sin secretos en el repo. Enlaces externos con `rel="noopener"`. Sin JS de terceros salvo la analítica. | Javi |
 | **Repositorio** | Ningún `.pdf` ni imagen > 400 KB se sube al repo (bloqueado por hook en Build). | Javi |
@@ -442,7 +444,7 @@ Cada una tiene un valor por defecto; si nadie objeta, el spec avanza con ese val
 | D1 | ¿Qué edición se publica? | **Decidido:** solo la web (~20 MB, estimado a 150 dpi). La de impresión (399 MB) se pide por mail (R6) | Brisa exporta la edición web desde InDesign |
 | D2 | Infraestructura | **Decidido:** Cloudflare Pages + Workers + D1 + R2 + Turnstile, todo en plan gratuito (§5.2) | — |
 | D3 | Plataforma de aporte | Cafecito y Mercado Pago | Recomendación: empezar con la que más use el público de Brisa |
-| D4 | Dominio | Subdominio gratuito (`movimiento.pages.dev`) | Un dominio propio tiene costo anual: queda fuera mientras rija "todo gratis" |
+| D4 | Dominio | Subdominio gratuito (`movimiento-2uc.pages.dev`; `movimiento.pages.dev` estaba tomado) | Un dominio propio tiene costo anual: queda fuera mientras rija "todo gratis" |
 | D5 | Umbral para mostrar el contador | 50 | Evita mostrar "3 descargas" el primer día |
 | D6 | ¿Deduplicar descargas repetidas? | **Decidido:** no | Requeriría cookies o IP, que §7 prohíbe. El captcha filtra bots (R2.4) |
 | D7 | Retratos y apodos de protagonistas | Retratos y nombres (como en el libro), sin apodos | Retratos tomados de las págs. 122–127; el rol "Profesora" corresponde a Carla Zabala |
@@ -452,6 +454,7 @@ Cada una tiene un valor por defecto; si nadie objeta, el spec avanza con ese val
 | D11 | Foto de tapa en alta resolución | Se usa la del PDF (945 px) | Conseguir el original antes de publicar |
 | D13 | Mail de contacto de Brisa | [MAIL PENDIENTE] | Puede ser uno creado solo para el libro |
 | D12 | ¿Quién entrega el PDF? | **Decidido:** el Worker, en streaming desde R2 (R1.3). Sin descargas reanudables: siempre envía el archivo completo | Descartado: redirigir a `r2.dev`. Era más simple, pero expone un enlace público que saltea el contador, y Cloudflare lo marca solo para desarrollo |
+| D14 | ¿Medio de pago para R2? | **Decidido:** se registra uno en Cloudflare. R2 no se activa sin tarjeta o PayPal; el uso queda dentro del límite gratuito, sin cargos | Descartado: servir el PDF como archivo de Pages (límite 25 MB por archivo), que cambiaba R1.3 y D12 |
 
 ---
 

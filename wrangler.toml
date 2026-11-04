@@ -14,7 +14,7 @@ MERCADOPAGO_URL = "https://www.mercadopago.com.ar/"
 binding = "DB"
 database_name = "movimiento"
 # PENDIENTE: id real tras `wrangler d1 create movimiento`
-database_id = "00000000-0000-0000-0000-000000000000"
+database_id = "c5ccf458-3ba8-41e2-94c8-1569ea684d16"
 migrations_dir = "migrations"
 
 [[r2_buckets]]
