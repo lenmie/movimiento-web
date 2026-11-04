@@ -454,18 +454,10 @@ p {
   align-items: center;
 }
 
-.cierre__cita {
-  margin: 0 0 2.5rem;
-  font-family: var(--fuente-titulo);
-  font-style: italic;
-  font-size: clamp(1.375rem, 3.5vw, 2rem);
-  line-height: 1.3;
-}
-
 .cierre__logo {
   width: min(100%, 30rem);
   height: auto;
-  margin-bottom: 2.5rem;
+  margin: 1rem 0 2.5rem;
 }
 
 .contador {
@@ -474,16 +466,13 @@ p {
   color: var(--color-texto-2);
 }
 
-.enlace {
-  display: inline-block;
-  margin-top: 1.25rem;
-  font-size: 0.875rem;
-  color: var(--color-texto-2);
-  text-underline-offset: 0.25em;
+.impresion {
+  margin-top: 2.5rem;
 }
 
-.enlace:hover {
-  color: var(--color-texto);
+.impresion p {
+  margin: 0 0 1rem;
+  font-size: 0.9375rem;
 }
 
 .cierre__linea {
@@ -539,7 +528,11 @@ p {
 .boton--principal {
   background: var(--color-texto);
   color: var(--color-fondo);
-  min-width: min(100%, 20rem);
+  min-width: min(100%, 26rem);
+  min-height: 64px;
+  padding: 0 clamp(0.75rem, 4vw, 2.5rem);
+  font-size: clamp(0.75rem, 3.75vw, 0.9375rem);
+  white-space: nowrap;
 }
 
 .boton--principal:hover {
@@ -559,6 +552,12 @@ p {
 .boton--secundario:hover {
   background: var(--color-texto);
   color: var(--color-fondo);
+}
+
+.boton--icono {
+  width: 52px;
+  padding: 0;
+  margin-top: 1.5rem;
 }
 
 .turnstile:empty {

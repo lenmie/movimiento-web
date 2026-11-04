@@ -6,7 +6,7 @@ const [libroPath, jsonPath] = process.argv.slice(2)
 // Une líneas, quita guiones de corte de línea, normaliza espacios.
 const libro = readFileSync(libroPath, 'utf8').replace(/=====.*=====/g, ' ').replace(/-\n/g, '').replace(/\s+/g, ' ')
 const c = JSON.parse(readFileSync(jsonPath, 'utf8'))
-const citas = [c.cierre.cita.texto, c.cierre.despedida.texto, c.autora.agradecimientos.texto,
+const citas = [c.cierre.despedida.texto, c.autora.agradecimientos.texto,
   ...c.autora.notaEditorial.parrafos, ...c.practicas.flatMap(p => [...p.texto, ...p.cronologia.map(x => x.texto)])]
 let mal = 0
 for (const t of citas) {

@@ -54,7 +54,7 @@ botones (descarga, aporte, pedido por mail) están en el cierre (S8). El hero in
 | S5 | **III Danza** | Título espejado, texto, cronología, foto ancha + grilla de 3 cuadradas | Texto: págs. 91–102 · Fotos: 1 inédita + 3 del libro |
 | S6 | **Protagonistas** | 10 retratos con nombre (D7) | Págs. 122–127 |
 | S7 | **La autora y créditos** | Retrato, bio factual, créditos, agradecimientos, memoria académica | Págs. 2, 122, 128 |
-| S8 | **Cierre: el libro** (`#descargar`) | Foto inédita a sangre con velo · "El libro · Descarga libre y gratuita" · cita de cierre ("Eso que ocurre en estas prácticas…") · logotipo blanco · **botón Descargar** · contador · pedido de la edición para impresión (R6) · aporte voluntario con Cafecito / Mercado Pago (`#aporte`, R3) · "Gracias por haber estado disponible para observar." | Cita: pág. 119 |
+| S8 | **Cierre: el libro** (`#descargar`) | Foto inédita a sangre con velo · "El libro · Descarga libre y gratuita" · logotipo blanco · **botón Descargar** · contador · pedido de la edición para impresión (R6) · aporte voluntario con Cafecito / Mercado Pago (`#aporte`, R3) · "Gracias por haber estado disponible para observar." · ícono de Instagram (R8) | Cita: pág. 119 |
 
 No hay barra fija ni botones flotantes: la única forma de descargar es llegar al cierre.
 
@@ -95,18 +95,17 @@ incluyen en el sitio.
 ├──────────────────────────────┤
 │ [foto a sangre con velo]     │  S8 · cierre
 │ EL LIBRO · DESCARGA GRATUITA │
-│ “Eso que ocurre en estas     │
-│  prácticas…”                 │
 │ MOVIMIENTO (logotipo)        │
 │ ┌──────────────────────────┐ │
 │ │ ↓ DESCARGAR LIBRO  20 MB │ │  ← R1, único botón de descarga
 │ └──────────────────────────┘ │
 │ 1.284 descargas              │  ← R2
-│ ¿Edición para imprimir? …    │  ← R6
+│ ¿Querés una copia impresa?   │  ← R6
 │ ────────                     │
 │ Aporte voluntario            │
 │ [Cafecito] [Mercado Pago]    │  ← R3
 │ Gracias por haber estado…    │
+│ [ícono Instagram]            │  ← R8
 └──────────────────────────────┘
 ```
 
@@ -132,14 +131,14 @@ incluyen en el sitio.
 ├───────────────────────────────────────────────────────────┤
 │              [foto a sangre con velo, centrado]           │
 │              EL LIBRO · DESCARGA LIBRE Y GRATUITA         │
-│              “Eso que ocurre en estas prácticas…”         │
 │                    MOVIMIENTO (logotipo)                  │
 │              [↓ DESCARGAR LIBRO · PDF 20 MB]              │
 │                     1.284 descargas                       │
-│        ¿Necesitás la edición para imprimir? Escribile…    │
+│          ¿Querés una copia impresa? [ESCRIBIME]           │
 │                        ────────                           │
 │     Si te gustó… aporte voluntario  [Cafecito] [M. Pago]  │
 │          Gracias por haber estado disponible…             │
+│                    [ícono Instagram]                      │
 └───────────────────────────────────────────────────────────┘
 ```
 
@@ -251,9 +250,9 @@ como si se viera a través del papel. En el sitio el gesto pasa a los títulos d
 
 ### R6 — Pedido de la edición para impresión
 
-- R6.1 Debajo del botón de descarga del cierre (S8), un enlace secundario: **"¿Necesitás la edición para
-  imprimir? Escribile a la autora"**.
-- R6.2 Es un enlace `mailto:` a la dirección de Brisa (D13), con asunto y cuerpo precargados:
+- R6.1 Entre el botón de descarga y el aporte voluntario del cierre (S8): **"¿Querés una copia impresa?"**
+  y un botón secundario **"Escribime"**. No se muestra mientras falte la dirección (D13).
+- R6.2 El botón abre un `mailto:` a la dirección de Brisa (D13), con asunto y cuerpo precargados:
   asunto *"Movimiento — edición para impresión"*, cuerpo *"Hola Brisa, quisiera la edición para
   impresión de Movimiento para…"*. Abre la app de correo de la persona; el sitio no guarda nada.
 - R6.3 La dirección no aparece escrita en el HTML: el script arma el `mailto:` al hacer click, para
@@ -279,6 +278,16 @@ La página funciona como adelanto: se descubre bajando, y la descarga es la reco
 **Aceptación**
 - [ ] Tocar la invitación lleva a la cita de apertura (S2).
 - [ ] Con movimiento reducido, la flecha no se anima.
+
+### R8 — Instagram
+
+- R8.1 Al final del cierre (S8), debajo de la despedida, un botón secundario solo con el ícono de Instagram
+  (dibujado en SVG, sin scripts de terceros) que abre `https://www.instagram.com/movimiento.libro/` en una
+  pestaña nueva, con `rel="noopener"`.
+- R8.2 Para lectores de pantalla se llama **"Seguir a Movimiento en Instagram"**.
+
+**Aceptación**
+- [ ] Click → se abre el perfil de Instagram en una pestaña nueva.
 
 ---
 
@@ -377,10 +386,10 @@ aunque deje de contar (R1.5).
 
 ### 6.3 Botón principal
 
-- Fondo `--color-texto` (#F2F2F2), texto `--color-fondo`, Poppins Medium 12 px en mayúsculas con
-  espaciado .14em, alto mínimo 52 px, ícono ↓ y "PDF · 20 MB" en gris.
+- Fondo `--color-texto` (#F2F2F2), texto `--color-fondo`, Poppins Medium 12–15 px (según el ancho) en mayúsculas con
+  espaciado .14em, alto mínimo 64 px, ícono ↓ y "PDF · 20 MB" en gris.
 - Hover: blanco puro. Foco: contorno de 2 px claro. Tras el click: "Descargando…" 2 s y vuelve.
-- Botones secundarios (Aporte, Cafecito, Mercado Pago): borde 1 px claro, fondo transparente; hover invierte.
+- Botones secundarios (Aporte, Cafecito, Mercado Pago, Escribime, Instagram): borde 1 px claro, fondo transparente; hover invierte.
 
 ---
 
@@ -452,7 +461,7 @@ Cada una tiene un valor por defecto; si nadie objeta, el spec avanza con ese val
 | D9 | ¿Versión en inglés? | No (fuera de alcance en `intent.md`) | El borrador "Suspensión" tenía selector ES/EN; se quitó |
 | D10 | Créditos de las fotos inéditas | Alejo Azzarini · Isabella Jubany | Confirmar autoría de cada inédita |
 | D11 | Foto de tapa en alta resolución | Se usa la del PDF (945 px) | Conseguir el original antes de publicar |
-| D13 | Mail de contacto de Brisa | [MAIL PENDIENTE] | Puede ser uno creado solo para el libro |
+| D13 | Mail de contacto de Brisa | **Decidido:** cuenta creada solo para el libro; la dirección va partida en `contenido.json` (R6.3) | No se escribe entera en el repo |
 | D12 | ¿Quién entrega el PDF? | **Decidido:** el Worker, en streaming desde R2 (R1.3). Sin descargas reanudables: siempre envía el archivo completo | Descartado: redirigir a `r2.dev`. Era más simple, pero expone un enlace público que saltea el contador, y Cloudflare lo marca solo para desarrollo |
 | D14 | ¿Medio de pago para R2? | **Decidido:** se registra uno en Cloudflare. R2 no se activa sin tarjeta o PayPal; el uso queda dentro del límite gratuito, sin cargos | Descartado: servir el PDF como archivo de Pages (límite 25 MB por archivo), que cambiaba R1.3 y D12 |
 

@@ -107,14 +107,11 @@
 
   "cierre": {
     "etiqueta": "El libro · Descarga libre y gratuita",
-    "cita": {
-      "pagina": 119,
-      "texto": "Eso que ocurre en estas prácticas no se puede explicar del todo con palabras, pero se puede mostrar, sentir, compartir."
-    },
     "boton": "Descargar libro",
     "formato": "PDF · 20 MB",
     "descargando": "Descargando…",
-    "impresion": "¿Necesitás la edición para imprimir? Escribile a la autora",
+    "impresionPregunta": "¿Querés una copia impresa?",
+    "impresionBoton": "Escribime",
     "aporteTitulo": "Aporte voluntario",
     "aporteTexto": "Si te gustó el libro y querés apoyar el proyecto, podés hacer un aporte voluntario.",
     "despedida": {
@@ -136,10 +133,15 @@
     ]
   },
 
+  "instagram": {
+    "url": "https://www.instagram.com/movimiento.libro/",
+    "etiqueta": "Seguir a Movimiento en Instagram"
+  },
+
   "contacto": {
-    "_nota": "D13 PENDIENTE. La dirección se guarda partida y se arma recién al hacer click (R6.3). Mientras esté vacía, el enlace de R6 no se muestra.",
-    "usuario": "",
-    "dominio": "",
+    "_nota": "La dirección (D13) se guarda partida y se arma recién al hacer click (R6.3). Si estuviera vacía, el pedido de R6 no se muestra.",
+    "usuario": "movimientolibrodefotografias",
+    "dominio": "gmail.com",
     "asunto": "Movimiento — edición para impresión",
     "cuerpo": "Hola Brisa, quisiera la edición para impresión de Movimiento para…"
   }

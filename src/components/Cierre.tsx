@@ -10,12 +10,12 @@ import { BotonesAporte } from './Aporte'
 import { Foto } from './Foto'
 import { PanelGracias } from './PanelGracias'
 
-const { cierre, contacto } = contenido
+const { cierre, contacto, instagram } = contenido
 const DURACION_DESCARGANDO_MS = 2000
 
 /**
  * S8: el único lugar con botones. Descarga (R1), contador (R2), pedido de la edición para
- * impresión (R6) y aporte voluntario (R3).
+ * impresión (R6), aporte voluntario (R3) e Instagram (R8).
  */
 export function Cierre({ origen }: { origen: Origen }) {
   const seccion = useRef<HTMLElement>(null)
@@ -44,8 +44,7 @@ export function Cierre({ origen }: { origen: Origen }) {
     setPanelAbierto(true)
   }
 
-  function alPedirImpresion(e: MouseEvent<HTMLAnchorElement>) {
-    e.preventDefault()
+  function alPedirImpresion() {
     window.location.href = construirMailto(contacto)
   }
 
@@ -60,9 +59,6 @@ export function Cierre({ origen }: { origen: Origen }) {
 
       <div className="cierre__contenido">
         <p className="etiqueta">{cierre.etiqueta}</p>
-        <blockquote className="cierre__cita">
-          <p>“{cierre.cita.texto}”</p>
-        </blockquote>
         <img
           className="cierre__logo"
           src="/assets/logo/movimiento-blanco.svg"
@@ -86,9 +82,12 @@ export function Cierre({ origen }: { origen: Origen }) {
         )}
 
         {hayContacto(contacto) && (
-          <a className="enlace" href="#descargar" onClick={alPedirImpresion}>
-            {cierre.impresion}
-          </a>
+          <div className="impresion">
+            <p className="texto-2">{cierre.impresionPregunta}</p>
+            <button type="button" className="boton boton--secundario" onClick={alPedirImpresion}>
+              {cierre.impresionBoton}
+            </button>
+          </div>
         )}
 
         <hr className="cierre__linea" />
@@ -100,6 +99,20 @@ export function Cierre({ origen }: { origen: Origen }) {
         </div>
 
         <p className="cierre__despedida">{cierre.despedida.texto}</p>
+
+        <a
+          className="boton boton--secundario boton--icono"
+          href={instagram.url}
+          target="_blank"
+          rel="noopener"
+          aria-label={instagram.etiqueta}
+        >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" strokeWidth="1.5" />
+            <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" strokeWidth="1.5" />
+            <circle cx="17.25" cy="6.75" r="1.1" fill="currentColor" />
+          </svg>
+        </a>
       </div>
 
       <PanelGracias abierto={panelAbierto} alCerrar={cerrarPanel} />
