@@ -54,7 +54,7 @@ botones (descarga, aporte, pedido por mail) están en el cierre (S8). El hero in
 | S5 | **III Danza** | Título espejado, texto, cronología, foto ancha + grilla de 3 cuadradas | Texto: págs. 91–102 · Fotos: 2 inéditas + 2 del libro |
 | S6 | **Protagonistas** | 10 retratos con nombre (D7) | Págs. 122–127 |
 | S7 | **La autora y créditos** | Retrato, bio factual, créditos, agradecimientos, memoria académica | Págs. 2, 122, 128 |
-| S7b | **Así es el libro** | 5 fotos del libro impreso (R9), sin botones | Fotos del libro impreso |
+| S7b | **El Libro** | 5 fotos del libro impreso (R9), sin botones | Fotos del libro impreso |
 | S8 | **Cierre: el libro** (`#descargar`) | Foto inédita a sangre con velo · "El libro · Descarga libre y gratuita" · logotipo blanco · **botón Descargar** · contador · pedido de la edición para impresión (R6) y botón de Instagram (R8) · aporte voluntario con Cafecito / Mercado Pago (`#aporte`, R3) · "Gracias por haber estado disponible para observar." | Cita: pág. 119 |
 
 No hay barra fija ni botones flotantes: la única forma de descargar es llegar al cierre.
@@ -94,7 +94,7 @@ incluyen en el sitio.
 │ Protagonistas                │  S6
 │ La autora y créditos         │  S7
 ├──────────────────────────────┤
-│ Así es el libro (5 fotos)    │  S7b · R9
+│ El Libro (5 fotos)           │  S7b · R9
 ├──────────────────────────────┤
 │ [foto a sangre con velo]     │  S8 · cierre
 │ EL LIBRO · DESCARGA GRATUITA │
@@ -133,7 +133,7 @@ incluyen en el sitio.
 │ II y III con el mismo patrón · Protagonistas (5 × 2) ·    │
 │ La autora y créditos                                      │
 ├───────────────────────────────────────────────────────────┤
-│              Así es el libro (5 fotos, R9)                │
+│                 El Libro (5 fotos, R9)                    │
 ├───────────────────────────────────────────────────────────┤
 │              [foto a sangre con velo, centrado]           │
 │              EL LIBRO · DESCARGA LIBRE Y GRATUITA         │
@@ -297,7 +297,7 @@ La página funciona como adelanto: se descubre bajando, y la descarga es la reco
 
 ### R9 — Fotos del libro impreso
 
-- R9.1 Entre la autora (S7) y el cierre (S8), la sección **"Así es el libro"** muestra 5 fotos del libro impreso:
+- R9.1 Entre la autora (S7) y el cierre (S8), la sección **"El Libro"** muestra 5 fotos del libro impreso:
   una ancha y dos filas de dos (en teléfono, una debajo de la otra).
 - R9.2 Sirve para que se entienda qué se descarga: el botón de descarga sigue siendo uno solo, en S8.
 
