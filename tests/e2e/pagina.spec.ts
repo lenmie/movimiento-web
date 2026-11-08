@@ -52,6 +52,39 @@ test.describe('con movimiento reducido', () => {
       'none',
     )
   })
+
+  test('nada empieza invisible (R10.5)', async ({ page }) => {
+    await page.goto('/')
+    const invisibles = await page
+      .locator('.aparece')
+      .evaluateAll((els) => els.filter((el) => getComputedStyle(el).opacity !== '1').length)
+    expect(invisibles).toBe(0)
+  })
+})
+
+test.describe('aparición con fundido (R10)', () => {
+  const opacidad = (el: Element) => getComputedStyle(el).opacity
+
+  test('el hero aparece al cargar y lo de abajo espera a que se llegue (R10.1)', async ({ page }) => {
+    await page.goto('/')
+    await expect.poll(() => page.locator('.hero__titulo').evaluate(opacidad)).toBe('1')
+
+    const titulo = page.locator('#titulo-autora')
+    expect(await titulo.evaluate(opacidad)).toBe('0')
+    await titulo.scrollIntoViewIfNeeded()
+    await expect.poll(() => titulo.evaluate(opacidad)).toBe('1')
+  })
+
+  test('el botón de descarga no se funde (R10.4)', async ({ page }) => {
+    await page.goto('/')
+    await page.locator('#descargar').scrollIntoViewIfNeeded()
+    const visible = await botonDescarga(page).evaluate((el) => {
+      let total = 1
+      for (let e: Element | null = el; e; e = e.parentElement) total *= Number(getComputedStyle(e).opacity)
+      return total
+    })
+    expect(visible).toBe(1)
+  })
 })
 
 test('descargar entrega el PDF y abre el panel en cada click (R1, R3)', async ({ page }) => {

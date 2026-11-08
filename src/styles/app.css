@@ -665,12 +665,22 @@ p {
       animation-timeline: view();
       animation-range: entry 10% cover 45%;
     }
+  }
+}
 
-    .aparece {
-      animation: aparecer linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 70%;
-    }
+/*
+ * Aparición con fundido (R10), como el sitio de Brisa en Canva: solo opacidad, 0,9 s, desacelerando.
+ * `.con-aparicion` lo pone src/lib/aparecer.ts antes del primer render; sin él (movimiento reducido,
+ * sin IntersectionObserver) o al imprimir, nada empieza invisible.
+ */
+@media screen and (prefers-reduced-motion: no-preference) {
+  .con-aparicion .aparece {
+    opacity: 0;
+    transition: opacity 0.9s ease-out var(--retraso-aparicion, 0ms);
+  }
+
+  .con-aparicion .aparece--visible {
+    opacity: 1;
   }
 }
 
@@ -690,17 +700,6 @@ p {
   }
   to {
     transform: perspective(60em) rotateY(0deg);
-  }
-}
-
-@keyframes aparecer {
-  from {
-    opacity: 0;
-    transform: translateY(1.5rem);
-  }
-  to {
-    opacity: 1;
-    transform: none;
   }
 }
 

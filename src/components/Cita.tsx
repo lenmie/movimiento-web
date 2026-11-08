@@ -7,7 +7,7 @@ const [antes, despues] = texto.split(destacado)
 export function Cita() {
   return (
     <section id="recorrido" className="cita" aria-label="Cita de apertura">
-      <blockquote>
+      <blockquote className="aparece">
         <p>
           {antes}
           <strong>{destacado}</strong>

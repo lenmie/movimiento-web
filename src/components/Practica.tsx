@@ -33,12 +33,14 @@ export function Practica({ practica }: Props) {
         <div className="practica__cuerpo">
           <div className="practica__texto">
             {practica.texto.map((p) => (
-              <p key={p}>{p}</p>
+              <p key={p} className="aparece">
+                {p}
+              </p>
             ))}
           </div>
           <ol className="cronologia" aria-label={`Cronología: ${practica.titulo}`}>
             {practica.cronologia.map((h) => (
-              <li key={h.cuando}>
+              <li key={h.cuando} className="aparece">
                 <span className="etiqueta">{h.cuando}</span>
                 <span>{h.texto}</span>
               </li>

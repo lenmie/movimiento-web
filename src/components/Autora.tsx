@@ -8,23 +8,25 @@ export function Autora() {
   const [retrato] = fotosDe('autora')
   return (
     <section className="autora contenedor" aria-labelledby="titulo-autora">
-      <h2 id="titulo-autora" className="seccion__titulo">
+      <h2 id="titulo-autora" className="seccion__titulo aparece">
         {autora.titulo}
       </h2>
       <div className="autora__cuerpo">
-        <figure className="autora__retrato">
+        <figure className="autora__retrato aparece">
           <Foto foto={retrato} sizes="(min-width: 1024px) 30vw, 100vw" className="foto foto--retrato" />
           <figcaption>{autora.nombre}</figcaption>
         </figure>
 
         <div className="autora__textos">
-          <h3 className="etiqueta">{autora.notaEditorialTitulo}</h3>
+          <h3 className="etiqueta aparece">{autora.notaEditorialTitulo}</h3>
           {autora.notaEditorial.parrafos.map((p) => (
-            <p key={p}>{p}</p>
+            <p key={p} className="aparece">
+              {p}
+            </p>
           ))}
 
-          <h3 className="etiqueta">Créditos</h3>
-          <dl className="creditos">
+          <h3 className="etiqueta aparece">Créditos</h3>
+          <dl className="creditos aparece">
             {autora.creditos.items.map((c) => (
               <div key={c.rol}>
                 <dt>{c.rol}</dt>
@@ -32,10 +34,10 @@ export function Autora() {
               </div>
             ))}
           </dl>
-          <p className="texto-2">{autora.creditos.edicion}</p>
+          <p className="texto-2 aparece">{autora.creditos.edicion}</p>
 
-          <h3 className="etiqueta">{autora.agradecimientosTitulo}</h3>
-          <p>{autora.agradecimientos.texto}</p>
+          <h3 className="etiqueta aparece">{autora.agradecimientosTitulo}</h3>
+          <p className="aparece">{autora.agradecimientos.texto}</p>
         </div>
       </div>
     </section>

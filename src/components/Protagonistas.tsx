@@ -6,14 +6,14 @@ export function Protagonistas() {
   const retratos = fotosDe('protagonistas')
   return (
     <section className="protagonistas contenedor" aria-labelledby="titulo-protagonistas">
-      <h2 id="titulo-protagonistas" className="seccion__titulo">
+      <h2 id="titulo-protagonistas" className="seccion__titulo aparece">
         {contenido.protagonistas.titulo}
       </h2>
       <ul className="protagonistas__grilla">
         {retratos.map((f) => (
           <li key={f.archivo}>
-            <figure>
-              <Foto foto={f} sizes="(min-width: 1024px) 20vw, 50vw" className="foto foto--retrato aparece" />
+            <figure className="aparece">
+              <Foto foto={f} sizes="(min-width: 1024px) 20vw, 50vw" className="foto foto--retrato" />
               <figcaption>
                 {f.rol && <span className="etiqueta">{f.rol}</span>}
                 <span>{f.nombre}</span>

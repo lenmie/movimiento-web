@@ -55,13 +55,13 @@ export function Cierre({ origen }: { origen: Origen }) {
 
   return (
     <section id="descargar" ref={seccion} className="cierre" aria-label={cierre.etiqueta}>
-      <Foto foto={fondo} sizes="100vw" className="cierre__fondo" />
+      <Foto foto={fondo} sizes="100vw" className="cierre__fondo aparece" />
       <div className="cierre__velo" />
 
       <div className="cierre__contenido">
-        <p className="etiqueta">{cierre.etiqueta}</p>
+        <p className="etiqueta aparece">{cierre.etiqueta}</p>
         <img
-          className="cierre__logo"
+          className="cierre__logo aparece"
           src="/assets/logo/movimiento-blanco.svg"
           alt=""
           width={706}

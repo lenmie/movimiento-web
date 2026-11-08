@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Estado** | v1.2 — diseño cerrado por Javi; revisión técnica (captcha, plan gratuito, sin cookies, sin métricas de éxito); v1.2: JS obligatorio (app React), sin metas de rendimiento por ahora; pendiente de aprobación de Brisa (§11) |
+| **Estado** | v1.3 — diseño cerrado por Javi; revisión técnica (captcha, plan gratuito, sin cookies, sin métricas de éxito); v1.2: JS obligatorio (app React), sin metas de rendimiento por ahora; v1.3: títulos, textos y fotos aparecen con un fundido (R10); pendiente de aprobación de Brisa (§11) |
 | **Diseño de referencia** | Canvas "Movimiento — sitio web" (Claude Design) |
 | **Origen** | [`intent.md`](./intent.md) |
 | **Responsable del spec** | Javi |
@@ -278,7 +278,7 @@ La página funciona como adelanto: se descubre bajando, y la descarga es la reco
   de 1 px + **"Recorré el libro"** + *"Al final, podés descargarlo completo"*. Lleva a S2 (`#recorrido`).
 - R7.2 La flecha se mueve suave hacia abajo (7 px, ciclo de 2,6 s). Con `prefers-reduced-motion`, queda quieta.
 - R7.3 El resto de la invitación la hacen las secciones: numerales I · II · III, títulos que se dan
-  vuelta al entrar en pantalla (R4) y fotos que aparecen con el scroll. No hay botones flotantes,
+  vuelta al entrar en pantalla (R4) y títulos, textos y fotos que aparecen con un fundido (R10). No hay botones flotantes,
   barras fijas ni ventanas emergentes.
 
 **Aceptación**
@@ -303,6 +303,26 @@ La página funciona como adelanto: se descubre bajando, y la descarga es la reco
 
 **Aceptación**
 - [ ] Las fotos aparecen justo antes del cierre.
+
+### R10 — Aparición con fundido
+
+Referencia: el sitio de Brisa en Canva (`bybrisajazmin.my.canva.site/sitio-web-arregui-brisa-junio-2026`),
+donde cada página entra con un fundido suave: primero la foto, enseguida el título y después el texto.
+
+- R10.1 Títulos, textos y fotos aparecen con un fundido de opacidad (de 0 a 1 en 0,9 s, desacelerando)
+  la primera vez que entran en pantalla. No se desplazan ni cambian de tamaño. El hero lo hace al cargar.
+- R10.2 Los que entran juntos se escalonan 0,12 s en el orden de la página (como máximo 0,48 s).
+  Una foto espera a terminar de cargar antes de aparecer.
+- R10.3 Los títulos de las prácticas se funden y además giran (R4), las dos cosas a la vez.
+- R10.4 Los botones y el contador del cierre (S8) no se funden: se ven sin esperar ninguna animación.
+- R10.5 Con `prefers-reduced-motion: reduce`, sin `IntersectionObserver` o al imprimir, todo se ve
+  desde el inicio.
+
+**Aceptación**
+- [ ] Al cargar, la foto, el logotipo, la bajada y la invitación del hero aparecen con un fundido.
+- [ ] Un título, un texto o una foto todavía no vistos están invisibles y se ven al llegar a ellos.
+- [ ] El botón de descarga está a la vista sin esperar ninguna animación.
+- [ ] Con movimiento reducido, nada empieza invisible.
 
 ---
 

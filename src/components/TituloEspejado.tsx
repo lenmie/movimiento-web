@@ -10,7 +10,7 @@ interface Props {
  */
 export function TituloEspejado({ numeral, titulo, id }: Props) {
   return (
-    <h2 className="practica__titulo" id={id}>
+    <h2 className="practica__titulo aparece" id={id}>
       <span className="practica__numeral">{numeral}</span>{' '}
       <span className="espejado">{titulo}</span>
     </h2>
