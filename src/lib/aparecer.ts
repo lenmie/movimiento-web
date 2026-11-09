@@ -1,5 +1,5 @@
 /**
- * R10: títulos, textos y fotos aparecen con un fundido la primera vez que entran en pantalla,
+ * R10: textos y fotos aparecen con un fundido la primera vez que entran en pantalla,
  * como el sitio de Brisa en Canva. Los que entran juntos se escalonan, y una foto espera a
  * terminar de cargar. El fundido en sí es CSS (`.con-aparicion .aparece` en app.css).
  */
@@ -23,7 +23,7 @@ export function observarAparicion(raiz: ParentNode = document): () => void {
 
   const obs = new IntersectionObserver(
     (entradas) => {
-      // Las entradas llegan en el orden de la página: foto, título, texto (R10.2).
+      // Las entradas llegan en el orden de la página: foto, texto (R10.2).
       let paso = 0
       for (const entrada of entradas) {
         if (!entrada.isIntersecting) continue

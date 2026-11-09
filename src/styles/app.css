@@ -275,7 +275,7 @@ p {
   margin-bottom: 0.5rem;
 }
 
-.espejado {
+.practica__nombre {
   display: inline-block;
   font-size: clamp(3rem, 13vw, 9rem);
 }
@@ -658,13 +658,37 @@ p {
     animation: flecha 2.6s ease-in-out infinite;
   }
 
-  /* Sin soporte de animaciones por scroll, todo se ve derecho y quieto (R4.3). */
+  /*
+   * Nombres de las prácticas con paralaje (R4). Cada práctica recorta lo que asoma por encima de
+   * su borde, así lo que queda arriba (las fotos de la sección anterior) hace de capa de adelante.
+   * El nombre arranca escondido detrás de ese borde y baja más lento que la página: parece salir
+   * de abajo de las fotos a medida que se hace scroll. El numeral queda quieto (R4.4). Sin soporte
+   * de animaciones por scroll, los nombres quedan quietos en su lugar (R4.3).
+   */
   @supports (animation-timeline: view()) {
-    .espejado {
-      animation: girar linear both;
-      animation-timeline: view();
-      animation-range: entry 10% cover 45%;
+    .practica {
+      overflow-y: clip;
+      view-timeline: --practica block;
     }
+
+    .practica__nombre {
+      animation: salir-de-atras linear both;
+      animation-timeline: --practica;
+      animation-range: entry 0% entry 75%;
+    }
+  }
+}
+
+/*
+ * Arranca justo arriba del borde de la práctica y baja a su lugar: sube su alto, el aire de arriba
+ * de la sección y lo que ocupa el numeral (como máximo 1,75rem de alto + 0,5rem de margen).
+ */
+@keyframes salir-de-atras {
+  from {
+    translate: 0 calc(-100% - var(--espacio-seccion) - 2.25rem);
+  }
+  to {
+    translate: 0 0;
   }
 }
 
@@ -691,15 +715,6 @@ p {
   }
   50% {
     transform: translateY(7px);
-  }
-}
-
-@keyframes girar {
-  from {
-    transform: perspective(60em) rotateY(180deg);
-  }
-  to {
-    transform: perspective(60em) rotateY(0deg);
   }
 }
 

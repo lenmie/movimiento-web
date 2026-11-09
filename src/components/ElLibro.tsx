@@ -6,7 +6,7 @@ export function ElLibro() {
   const fotos = fotosDe('libro')
   return (
     <section className="libro contenedor" aria-labelledby="titulo-libro">
-      <h2 id="titulo-libro" className="seccion__titulo aparece">
+      <h2 id="titulo-libro" className="seccion__titulo">
         {contenido.libro.titulo}
       </h2>
       <div className="libro__grilla">

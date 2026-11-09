@@ -33,21 +33,35 @@ test('el lector de pantalla lee los títulos reales (R4.2)', async ({ page }) =>
     await expect(page.getByRole('heading', { level: 2, name: new RegExp(titulo) })).toBeVisible()
 })
 
-test('sin movimiento reducido, los títulos giran con el scroll (R4.1)', async ({ page }) => {
+const TITULOS = '.practica__titulo, .seccion__titulo'
+const QUIETOS = '.practica__titulo, .practica__numeral, .seccion__titulo'
+
+test('sin movimiento reducido, los nombres de las prácticas salen de atrás con el scroll (R4.1, R4.4)', async ({
+  page,
+}) => {
   await page.goto('/')
-  const nombre = await page.locator('.espejado').first().evaluate((el) => getComputedStyle(el).animationName)
-  expect(nombre).toBe('girar')
+  const animacion = (els: Element[]) => els.map((el) => getComputedStyle(el).animationName)
+  expect(await page.locator('.practica__nombre').evaluateAll(animacion)).toEqual(Array(3).fill('salir-de-atras'))
+  // El numeral y los títulos de Protagonistas, Autora y El Libro no se mueven.
+  expect(await page.locator(QUIETOS).evaluateAll(animacion)).toEqual(Array(9).fill('none'))
+
+  // Antes de llegar, el nombre Danza está escondido arriba de su sección (detrás de las fotos de Acrobacia).
+  const escondido = await page.locator('#titulo-danza .practica__nombre').evaluate((el) => {
+    const borde = el.closest('section')!.getBoundingClientRect().top
+    return el.getBoundingClientRect().bottom <= borde + 1
+  })
+  expect(escondido).toBe(true)
 })
 
 test.describe('con movimiento reducido', () => {
   test.use({ colorScheme: 'dark', reducedMotion: 'reduce' })
 
-  test('ningún título aparece espejado y la flecha no se anima (R4.3, R7.2)', async ({ page }) => {
+  test('los títulos están en su lugar desde el inicio y la flecha no se anima (R4.3, R7.2)', async ({ page }) => {
     await page.goto('/')
-    for (const t of await page.locator('.espejado').all()) {
-      await t.scrollIntoViewIfNeeded()
-      expect(await t.evaluate((el) => getComputedStyle(el).transform)).toBe('none')
-    }
+    const desplazados = await page
+      .locator('.practica__nombre')
+      .evaluateAll((els) => els.filter((el) => getComputedStyle(el).translate !== 'none').length)
+    expect(desplazados).toBe(0)
     expect(await page.locator('.invitacion__flecha svg').evaluate((el) => getComputedStyle(el).animationName)).toBe(
       'none',
     )
@@ -69,10 +83,16 @@ test.describe('aparición con fundido (R10)', () => {
     await page.goto('/')
     await expect.poll(() => page.locator('.hero__titulo').evaluate(opacidad)).toBe('1')
 
-    const titulo = page.locator('#titulo-autora')
-    expect(await titulo.evaluate(opacidad)).toBe('0')
-    await titulo.scrollIntoViewIfNeeded()
-    await expect.poll(() => titulo.evaluate(opacidad)).toBe('1')
+    const texto = page.locator('.autora__textos p.aparece').first()
+    expect(await texto.evaluate(opacidad)).toBe('0')
+    await texto.scrollIntoViewIfNeeded()
+    await expect.poll(() => texto.evaluate(opacidad)).toBe('1')
+  })
+
+  test('los títulos de sección no se funden (R10.3)', async ({ page }) => {
+    await page.goto('/')
+    const opacidades = await page.locator(TITULOS).evaluateAll((els) => els.map((el) => getComputedStyle(el).opacity))
+    expect(opacidades).toEqual(Array(6).fill('1'))
   })
 
   test('el botón de descarga no se funde (R10.4)', async ({ page }) => {

@@ -8,7 +8,7 @@ export function Autora() {
   const [retrato] = fotosDe('autora')
   return (
     <section className="autora contenedor" aria-labelledby="titulo-autora">
-      <h2 id="titulo-autora" className="seccion__titulo aparece">
+      <h2 id="titulo-autora" className="seccion__titulo">
         {autora.titulo}
       </h2>
       <div className="autora__cuerpo">

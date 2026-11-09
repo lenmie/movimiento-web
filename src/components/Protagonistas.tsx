@@ -6,7 +6,7 @@ export function Protagonistas() {
   const retratos = fotosDe('protagonistas')
   return (
     <section className="protagonistas contenedor" aria-labelledby="titulo-protagonistas">
-      <h2 id="titulo-protagonistas" className="seccion__titulo aparece">
+      <h2 id="titulo-protagonistas" className="seccion__titulo">
         {contenido.protagonistas.titulo}
       </h2>
       <ul className="protagonistas__grilla">

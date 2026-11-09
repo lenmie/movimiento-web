@@ -1,6 +1,6 @@
 import { fotosDe, type FotoInfo, type Seccion } from '../content'
 import { Foto } from './Foto'
-import { TituloEspejado } from './TituloEspejado'
+import { TituloPractica } from './TituloPractica'
 
 interface Props {
   practica: {
@@ -19,7 +19,7 @@ const GRUPOS: { uso: string; clase: string; sizes: string }[] = [
   { uso: 'cuadrada', clase: 'fotos--cuadradas', sizes: '33vw' },
 ]
 
-/** S3–S5: una práctica (título espejado, texto, cronología, fotos). */
+/** S3–S5: una práctica (título con paralaje, texto, cronología, fotos). */
 export function Practica({ practica }: Props) {
   const fotos = fotosDe(practica.id as Seccion)
   const ancha = fotos.find((f) => f.uso === 'ancha')
@@ -29,7 +29,7 @@ export function Practica({ practica }: Props) {
   return (
     <section id={practica.id} className="practica" aria-labelledby={tituloId}>
       <div className="contenedor">
-        <TituloEspejado id={tituloId} numeral={practica.numeral} titulo={practica.titulo} />
+        <TituloPractica id={tituloId} numeral={practica.numeral} titulo={practica.titulo} />
         <div className="practica__cuerpo">
           <div className="practica__texto">
             {practica.texto.map((p) => (

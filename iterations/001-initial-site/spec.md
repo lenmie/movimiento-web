@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Estado** | v1.3 — diseño cerrado por Javi; revisión técnica (captcha, plan gratuito, sin cookies, sin métricas de éxito); v1.2: JS obligatorio (app React), sin metas de rendimiento por ahora; v1.3: títulos, textos y fotos aparecen con un fundido (R10); pendiente de aprobación de Brisa (§11) |
+| **Estado** | v1.4 — diseño cerrado por Javi; revisión técnica (captcha, plan gratuito, sin cookies, sin métricas de éxito); v1.2: JS obligatorio (app React), sin metas de rendimiento por ahora; v1.3: títulos, textos y fotos aparecen con un fundido (R10); v1.4: los nombres de las prácticas salen de atrás de la sección anterior con paralaje (R4); ningún título se da vuelta ni se funde; pendiente de aprobación de Brisa (§11) |
 | **Diseño de referencia** | Canvas "Movimiento — sitio web" (Claude Design) |
 | **Origen** | [`intent.md`](./intent.md) |
 | **Responsable del spec** | Javi |
@@ -49,9 +49,9 @@ botones (descarga, aporte, pedido por mail) están en el cierre (S8). El hero in
 |---|---|---|---|
 | S1 | **Portada (hero)** | Foto inédita a sangre · logotipo "MOVIMIENTO" (SVG) · "Libro de fotografías sobre prácticas corporales" · invitación a recorrer (R7). **Sin botones ni contador** | Foto inédita |
 | S2 | **Cita de apertura** | Te invito a sumergirte en estas páginas… (fragmentos) | Pág. 7 |
-| S3 | **I Contorsión** | Título espejado (R4), texto, cronología, foto ancha + grilla de 4 verticales | Texto: págs. 29–40 · Fotos: inéditas + 1 del libro |
-| S4 | **II Acrobacia aérea** | Título espejado, texto, cronología, foto ancha + fila de 2 + grilla de 3 cuadradas | Texto: págs. 57–72 · Fotos: inéditas |
-| S5 | **III Danza** | Título espejado, texto, cronología, foto ancha + grilla de 3 cuadradas | Texto: págs. 91–102 · Fotos: 2 inéditas + 2 del libro |
+| S3 | **I Contorsión** | Título con paralaje (R4), texto, cronología, foto ancha + grilla de 4 verticales | Texto: págs. 29–40 · Fotos: inéditas + 1 del libro |
+| S4 | **II Acrobacia aérea** | Título con paralaje, texto, cronología, foto ancha + fila de 2 + grilla de 3 cuadradas | Texto: págs. 57–72 · Fotos: inéditas |
+| S5 | **III Danza** | Título con paralaje, texto, cronología, foto ancha + grilla de 3 cuadradas | Texto: págs. 91–102 · Fotos: 2 inéditas + 2 del libro |
 | S6 | **Protagonistas** | 10 retratos con nombre (D7) | Págs. 122–127 |
 | S7 | **La autora y créditos** | Retrato, bio factual, créditos, agradecimientos, memoria académica | Págs. 2, 122, 128 |
 | S7b | **El Libro** | 5 fotos del libro impreso (R9), sin botones | Fotos del libro impreso |
@@ -81,7 +81,7 @@ incluyen en el sitio.
 ├──────────────────────────────┤
 │ Te invito a sumergirte…      │  S2
 ├──────────────────────────────┤
-│ I  nóisrotnoC → Contorsión   │  S3 · título espejado (R4)
+│ I  Contorsión                │  S3 · título con paralaje (R4)
 │ texto · cronología           │
 │ [foto ancha]                 │
 │ [vert][vert]                 │
@@ -229,21 +229,29 @@ móviles —inicio, cierre y después de descargar—, hoja de estados y vista p
 - [ ] Cerrar el panel y volver a descargar → el panel aparece de nuevo.
 - [ ] Cada botón lleva al enlace externo correcto y suma 1 a su contador interno.
 
-### R4 — Títulos espejados
+### R4 — Títulos con paralaje
 
-Referencia: en el libro los conceptos tienen una página y su reverso con el texto invertido,
-como si se viera a través del papel. En el sitio el gesto pasa a los títulos de las tres prácticas.
+Referencia: el scroll por capas (paralaje): lo de adelante se mueve más rápido que lo de atrás,
+y eso da profundidad. Reemplaza al título espejado de v1.3.
 
-- R4.1 El título de cada práctica (Libre Bodoni, grande) entra a la pantalla
-  **espejado** y gira hasta leerse derecho a medida que se hace scroll
-  (animación ligada al scroll, `animation-timeline: view()`).
-- R4.2 Es solo una transformación visual: el texto del HTML siempre es el real.
-- R4.3 Sin soporte de animaciones por scroll, o con `prefers-reduced-motion: reduce`,
-  el nombre se muestra derecho desde el inicio.
+- R4.1 Los nombres de las tres prácticas (Contorsión, Acrobacia aérea, Danza) arrancan escondidos
+  detrás del borde de arriba de su sección, es decir, detrás de lo que queda arriba (las fotos de
+  la sección anterior; para Contorsión, la cita). A medida que se hace scroll bajan hasta su lugar
+  más lento que la página, como si salieran de abajo de las fotos. Recorren su alto, el aire de
+  arriba de la sección y el lugar del numeral mientras la sección entra a la pantalla (animación
+  ligada al scroll, `animation-timeline`).
+- R4.2 Es solo un desplazamiento visual: el texto del HTML siempre es el real y el nombre no cambia
+  de forma ni de tamaño.
+- R4.3 Sin soporte de animaciones por scroll, o con `prefers-reduced-motion: reduce`, los nombres
+  están en su lugar desde el inicio.
+- R4.4 Es el único efecto de los títulos: no se dan vuelta ni se funden (R10.3). Los numerales
+  (I · II · III) y los títulos de Protagonistas, Autora y El Libro quedan quietos.
 
 **Aceptación**
-- [ ] Un lector de pantalla lee "Contorsión", no "nóisrotnoC".
-- [ ] Con movimiento reducido, ningún título aparece espejado.
+- [ ] Al hacer scroll, el nombre Danza sale de abajo de las fotos de Acrobacia aérea.
+- [ ] Los numerales y los títulos de Protagonistas, Autora y El Libro no se mueven.
+- [ ] Un lector de pantalla lee los títulos reales.
+- [ ] Con movimiento reducido, todos los nombres están en su lugar desde el inicio.
 
 ### R5 — Compartir
 
@@ -277,8 +285,8 @@ La página funciona como adelanto: se descubre bajando, y la descarga es la reco
 - R7.1 En el hero, debajo de la bajada, un enlace sutil (no un botón): ícono de flecha en un círculo
   de 1 px + **"Recorré el libro"** + *"Al final, podés descargarlo completo"*. Lleva a S2 (`#recorrido`).
 - R7.2 La flecha se mueve suave hacia abajo (7 px, ciclo de 2,6 s). Con `prefers-reduced-motion`, queda quieta.
-- R7.3 El resto de la invitación la hacen las secciones: numerales I · II · III, títulos que se dan
-  vuelta al entrar en pantalla (R4) y títulos, textos y fotos que aparecen con un fundido (R10). No hay botones flotantes,
+- R7.3 El resto de la invitación la hacen las secciones: numerales I · II · III, nombres de las prácticas
+  que salen de atrás de las fotos al hacer scroll (R4) y textos y fotos que aparecen con un fundido (R10). No hay botones flotantes,
   barras fijas ni ventanas emergentes.
 
 **Aceptación**
@@ -309,18 +317,20 @@ La página funciona como adelanto: se descubre bajando, y la descarga es la reco
 Referencia: el sitio de Brisa en Canva (`bybrisajazmin.my.canva.site/sitio-web-arregui-brisa-junio-2026`),
 donde cada página entra con un fundido suave: primero la foto, enseguida el título y después el texto.
 
-- R10.1 Títulos, textos y fotos aparecen con un fundido de opacidad (de 0 a 1 en 0,9 s, desacelerando)
+- R10.1 Textos y fotos aparecen con un fundido de opacidad (de 0 a 1 en 0,9 s, desacelerando)
   la primera vez que entran en pantalla. No se desplazan ni cambian de tamaño. El hero lo hace al cargar.
 - R10.2 Los que entran juntos se escalonan 0,12 s en el orden de la página (como máximo 0,48 s).
   Una foto espera a terminar de cargar antes de aparecer.
-- R10.3 Los títulos de las prácticas se funden y además giran (R4), las dos cosas a la vez.
+- R10.3 Los títulos de sección (con su numeral) no se funden; los nombres de las prácticas entran
+  con paralaje (R4).
 - R10.4 Los botones y el contador del cierre (S8) no se funden: se ven sin esperar ninguna animación.
 - R10.5 Con `prefers-reduced-motion: reduce`, sin `IntersectionObserver` o al imprimir, todo se ve
   desde el inicio.
 
 **Aceptación**
 - [ ] Al cargar, la foto, el logotipo, la bajada y la invitación del hero aparecen con un fundido.
-- [ ] Un título, un texto o una foto todavía no vistos están invisibles y se ven al llegar a ellos.
+- [ ] Un texto o una foto todavía no vistos están invisibles y se ven al llegar a ellos.
+- [ ] Los títulos de sección se ven sin fundido.
 - [ ] El botón de descarga está a la vista sin esperar ninguna animación.
 - [ ] Con movimiento reducido, nada empieza invisible.
 
