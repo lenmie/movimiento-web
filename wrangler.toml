@@ -4,9 +4,9 @@ pages_build_output_dir = "./dist"
 
 [vars]
 PDF_KEY = "movimiento-web.pdf"
-# PENDIENTE (D3): enlaces reales de aporte
-CAFECITO_URL = "https://cafecito.app/"
-MERCADOPAGO_URL = "https://www.mercadopago.com.ar/"
+# Enlaces de aporte (D3)
+CAFECITO_URL = "https://cafecito.app/movimientolibro"
+MERCADOPAGO_URL = "https://link.mercadopago.com.ar/movimientolibro"
 
 # TURNSTILE_SECRET es un secreto: `.dev.vars` en local, variable cifrada en Pages.
 

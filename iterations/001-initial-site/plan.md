@@ -63,7 +63,6 @@ tests/               unit/, functions/, e2e/
 | Qué | Dónde se configura |
 |---|---|
 | Proyecto Pages, base D1 + migración, bucket R2 + PDF web, claves Turnstile | Cloudflare / `wrangler.toml` / variables de Pages |
-| Enlaces de Cafecito y Mercado Pago (D3) | `CAFECITO_URL`, `MERCADOPAGO_URL` |
 | Mail de Brisa (D13) | `src/content/contenido.json` → `contacto` |
 | Exportar la edición web del PDF (D1) | Brisa |
 | Revisión de `contenido.json` y textos alternativos | Brisa |

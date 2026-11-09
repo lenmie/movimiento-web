@@ -504,7 +504,7 @@ Cada una tiene un valor por defecto; si nadie objeta, el spec avanza con ese val
 |---|---|---|---|
 | D1 | ¿Qué edición se publica? | **Decidido:** solo la web (33 MB, en dobles páginas). La de impresión (399 MB) se pide por mail (R6) | Brisa exporta la edición web desde InDesign |
 | D2 | Infraestructura | **Decidido:** Cloudflare Pages + Workers + D1 + R2 + Turnstile, todo en plan gratuito (§5.2) | — |
-| D3 | Plataforma de aporte | Cafecito y Mercado Pago | Recomendación: empezar con la que más use el público de Brisa |
+| D3 | Plataforma de aporte | **Decidido:** Cafecito (`cafecito.app/movimientolibro`) y Mercado Pago (`link.mercadopago.com.ar/movimientolibro`) | Enlaces en `wrangler.toml` (`CAFECITO_URL`, `MERCADOPAGO_URL`) |
 | D4 | Dominio | Subdominio gratuito (`movimiento-2uc.pages.dev`; `movimiento.pages.dev` estaba tomado) | Un dominio propio tiene costo anual: queda fuera mientras rija "todo gratis" |
 | D5 | Umbral para mostrar el contador | 50 | Evita mostrar "3 descargas" el primer día |
 | D6 | ¿Deduplicar descargas repetidas? | **Decidido:** no | Requeriría cookies o IP, que §7 prohíbe. El captcha filtra bots (R2.4) |
