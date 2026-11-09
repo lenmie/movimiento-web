@@ -225,7 +225,6 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 1rem;
-  text-decoration: none;
 }
 
 .invitacion__flecha {
@@ -253,7 +252,6 @@ p {
 
 .cita {
   padding: var(--espacio-seccion) clamp(1rem, 4vw, 3rem);
-  scroll-margin-top: 0;
 }
 
 .cita blockquote {

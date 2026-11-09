@@ -3,7 +3,7 @@ import { Foto } from './Foto'
 
 const { hero } = contenido
 
-/** S1: foto a sangre, logotipo y la invitación a recorrer. Sin botones ni contador (R7). */
+/** S1: foto a sangre, logotipo y la invitación a recorrer: solo una indicación, no se toca (R7.1). Sin botones ni contador. */
 export function Hero() {
   const [portada] = fotosDe('portada')
   return (
@@ -20,7 +20,7 @@ export function Hero() {
           <img src="/assets/logo/movimiento-blanco.svg" alt="Movimiento" width={706} height={116} />
         </h1>
         <p className="hero__bajada aparece">{hero.bajada}</p>
-        <a className="invitacion aparece" href="#recorrido">
+        <div className="invitacion aparece">
           <span className="invitacion__flecha" aria-hidden="true">
             <svg viewBox="0 0 16 16" width="16" height="16">
               <path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" fill="none" stroke="currentColor" strokeWidth="1.2" />
@@ -30,7 +30,7 @@ export function Hero() {
             <span className="etiqueta">{hero.invitacion}</span>
             <span className="invitacion__detalle">{hero.invitacionDetalle}</span>
           </span>
-        </a>
+        </div>
       </div>
     </header>
   )

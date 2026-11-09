@@ -282,15 +282,16 @@ y eso da profundidad. Reemplaza al título espejado de v1.3.
 
 La página funciona como adelanto: se descubre bajando, y la descarga es la recompensa del final.
 
-- R7.1 En el hero, debajo de la bajada, un enlace sutil (no un botón): ícono de flecha en un círculo
-  de 1 px + **"Recorré el libro"** + *"Al final, podés descargarlo completo"*. Lleva a S2 (`#recorrido`).
+- R7.1 En el hero, debajo de la bajada, una indicación sutil (ni enlace ni botón): ícono de flecha en un círculo
+  de 1 px + **"Recorré el libro"** + *"Al final, podés descargarlo completo"*. No se puede tocar: la persona
+  baja por su cuenta, con el scroll.
 - R7.2 La flecha se mueve suave hacia abajo (7 px, ciclo de 2,6 s). Con `prefers-reduced-motion`, queda quieta.
 - R7.3 El resto de la invitación la hacen las secciones: numerales I · II · III, nombres de las prácticas
   que salen de atrás de las fotos al hacer scroll (R4) y textos y fotos que aparecen con un fundido (R10). No hay botones flotantes,
   barras fijas ni ventanas emergentes.
 
 **Aceptación**
-- [ ] Tocar la invitación lleva a la cita de apertura (S2).
+- [ ] La invitación se ve en el hero y no es un enlace ni un botón: tocarla no mueve la página.
 - [ ] Con movimiento reducido, la flecha no se anima.
 
 ### R8 — Instagram

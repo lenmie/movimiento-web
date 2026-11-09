@@ -14,11 +14,13 @@ test('el hero no tiene botones y hay un solo botón de descarga, en S8 (R1, R7)'
   await expect(page.locator('#descargar a[href^="/descargar"]')).toHaveCount(1)
 })
 
-test('la invitación lleva a la cita de apertura (R7.1)', async ({ page }) => {
+test('la invitación es solo una indicación: no se toca, se baja con el scroll (R7.1)', async ({ page }) => {
   await page.goto('/')
-  await page.getByRole('link', { name: /Recorré el libro/ }).click()
-  await expect(page).toHaveURL(/#recorrido$/)
-  await expect(page.locator('#recorrido')).toBeInViewport()
+  const invitacion = page.locator('header.hero .invitacion')
+  await expect(invitacion).toContainText('Recorré el libro')
+  await expect(page.getByRole('link', { name: /Recorré el libro/ })).toHaveCount(0)
+  await invitacion.click()
+  expect(await page.evaluate(() => window.scrollY)).toBe(0)
 })
 
 test('las fotos del libro van justo antes del cierre (R9)', async ({ page }) => {
