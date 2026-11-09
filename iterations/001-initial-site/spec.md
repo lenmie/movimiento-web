@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Estado** | v1.4 — diseño cerrado por Javi; revisión técnica (captcha, plan gratuito, sin cookies, sin métricas de éxito); v1.2: JS obligatorio (app React), sin metas de rendimiento por ahora; v1.3: títulos, textos y fotos aparecen con un fundido (R10); v1.4: los nombres de las prácticas salen de atrás de la sección anterior con paralaje (R4); ningún título se da vuelta ni se funde; pendiente de aprobación de Brisa (§11) |
+| **Estado** | v1.5 — diseño cerrado por Javi; revisión técnica (captcha, plan gratuito, sin cookies, sin métricas de éxito); v1.2: JS obligatorio (app React), sin metas de rendimiento por ahora; v1.3: títulos, textos y fotos aparecen con un fundido (R10); v1.4: los nombres de las prácticas salen de atrás de la sección anterior con paralaje (R4); ningún título se da vuelta ni se funde; v1.5: en teléfonos, la foto de la portada es una banda arriba que se funde con el negro, en vez de llenar la pantalla (§6.2); pendiente de aprobación de Brisa (§11) |
 | **Diseño de referencia** | Canvas "Movimiento — sitio web" (Claude Design) |
 | **Origen** | [`intent.md`](./intent.md) |
 | **Responsable del spec** | Javi |
@@ -70,8 +70,8 @@ incluyen en el sitio.
 │ BRISA JAZMÍN ARREGUI   2026  │
 │                              │
 │  [foto inédita a sangre,     │
-│   pantalla completa]         │
-│                              │
+│   banda de arriba que se     │
+│   funde con el negro, §6.2]  │
 │ MOVIMIENTO  (logotipo SVG)   │
 │ Libro de fotografías sobre   │
 │ prácticas corporales         │
@@ -419,6 +419,12 @@ aunque deje de contar (R1.5).
   cuadrado 1:1, vertical 0,66 y retrato 0,78.
 - Solo la portada (S1) y el cierre (S8) van a sangre. Las fotos de las prácticas (S3–S5), Protagonistas
   (S6) y El Libro (S7b) dejan el mismo margen a los costados que el texto.
+- En pantallas más altas que anchas (teléfonos), la portada no llena la pantalla con la foto: es una
+  banda arriba, a todo el ancho, de 1,35 veces el ancho de alto (sin pasar de 3/4 de la pantalla), que
+  se funde con el negro; los textos siguen debajo. Llenando la pantalla, de la foto 3:2 se veía un
+  tercio del ancho (una sola de las tres bailarinas); en la banda entra la mitad: las dos bailarinas
+  de la derecha enteras y lo más grandes posible sin cortarlas. En escritorio no cambia. El cierre
+  sigue con la foto detrás de toda la sección, también en teléfonos.
 - Fuente preferida: archivos originales de los fotógrafos; alternativa: exportar desde el PDF.
 - El cierre (S8) usa de fondo una inédita: la practicante tendida en el piso, con un velo oscuro que
   se funde con el negro de la página arriba y abajo.

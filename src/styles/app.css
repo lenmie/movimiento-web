@@ -160,6 +160,20 @@ p {
   background: linear-gradient(to bottom, var(--velo-foto), transparent 30%, transparent 45%, var(--color-fondo));
 }
 
+/*
+ * Pantallas más altas que anchas (§6.2): llenando la pantalla, de la foto 3:2 se veía un tercio del
+ * ancho. La foto (y su velo, que termina en negro) pasa a ser una banda arriba de 1,35 veces el ancho
+ * de alto, sin pasar de 3/4 de la pantalla; los textos quedan debajo. Con más alto la foto se agranda
+ * y empieza a cortar a las dos bailarinas de la derecha.
+ */
+@media (orientation: portrait) {
+  .hero__foto,
+  .hero__velo {
+    inset: 0 0 auto;
+    height: min(135vw, 75svh);
+  }
+}
+
 .hero__arriba,
 .hero__abajo {
   position: relative;

@@ -8,7 +8,7 @@ export function Hero() {
   const [portada] = fotosDe('portada')
   return (
     <header className="hero">
-      <Foto foto={portada} sizes="(max-aspect-ratio: 3/2) 150vh, 100vw" className="hero__foto aparece" prioritaria />
+      <Foto foto={portada} sizes="(orientation: portrait) 203vw,(max-aspect-ratio: 3/2) 150vh, 100vw" className="hero__foto aparece" prioritaria />
       <div className="hero__velo" />
       <div className="hero__arriba aparece">
         <span>{hero.autora}</span>

@@ -199,6 +199,26 @@ test('sin scroll horizontal (360 px y escritorio)', async ({ page }) => {
   expect(sobra).toBeLessThanOrEqual(0)
 })
 
+test('en pantallas altas la foto de portada es una banda arriba; la del cierre siempre llena la sección (§6.2)', async ({
+  page,
+}) => {
+  await page.goto('/')
+  const { width, height } = page.viewportSize()!
+  for (const [seccion, foto, banda] of [
+    ['.hero', '.hero__foto', height > width],
+    ['.cierre', '.cierre__fondo', false],
+  ] as const) {
+    // Las dos medidas juntas: entre una y otra la página se puede mover mientras cargan las fotos.
+    const [s, f] = await page.evaluate(
+      (sel) => sel.map((x) => document.querySelector(x)!.getBoundingClientRect().toJSON() as DOMRect),
+      [seccion, foto],
+    )
+    expect(f.width).toBeCloseTo(s.width, 0)
+    expect(f.y).toBeCloseTo(s.y, 0)
+    expect(f.height).toBeCloseTo(banda ? Math.min(1.35 * width, 0.75 * height) : s.height, 0)
+  }
+})
+
 test('todas las fotos tienen texto alternativo (§7)', async ({ page }) => {
   await page.goto('/')
   const sinAlt = await page.locator('img:not([alt])').count()
