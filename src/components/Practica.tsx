@@ -14,9 +14,13 @@ interface Props {
 
 // Cada grupo de fotos según su "uso" en fotos.json (§3: ancha, fila de 2, verticales, cuadradas).
 const GRUPOS: { uso: string; clase: string; sizes: string }[] = [
-  { uso: 'fila de 2', clase: 'fotos--fila2', sizes: '(min-width: 768px) 50vw, 100vw' },
-  { uso: 'vertical', clase: 'fotos--verticales', sizes: '(min-width: 1024px) 25vw, 50vw' },
-  { uso: 'cuadrada', clase: 'fotos--cuadradas', sizes: '33vw' },
+  { uso: 'fila de 2', clase: 'fotos--fila2', sizes: '(min-width: 1280px) 600px, (min-width: 768px) 50vw, 100vw' },
+  {
+    uso: 'vertical',
+    clase: 'fotos--verticales',
+    sizes: '(min-width: 1280px) 300px, (min-width: 1024px) 25vw, 50vw',
+  },
+  { uso: 'cuadrada', clase: 'fotos--cuadradas', sizes: '(min-width: 1280px) 400px, 33vw' },
 ]
 
 /** S3–S5: una práctica (título con paralaje, texto, cronología, fotos). */
@@ -47,21 +51,28 @@ export function Practica({ practica }: Props) {
             ))}
           </ol>
         </div>
+
+        {/* Dentro del contenedor: mismo margen a los costados que Protagonistas y El Libro. */}
+        {ancha && (
+          <Foto
+            foto={ancha}
+            sizes="(min-width: 1280px) 1200px, 100vw"
+            className="foto foto--ancha aparece"
+          />
+        )}
+
+        {GRUPOS.map(({ uso, clase, sizes }) => {
+          const grupo = deUso(uso)
+          if (!grupo.length) return null
+          return (
+            <div key={uso} className={`fotos ${clase}`}>
+              {grupo.map((f) => (
+                <Foto key={f.archivo} foto={f} sizes={sizes} className="foto aparece" />
+              ))}
+            </div>
+          )
+        })}
       </div>
-
-      {ancha && <Foto foto={ancha} sizes="100vw" className="foto foto--ancha aparece" />}
-
-      {GRUPOS.map(({ uso, clase, sizes }) => {
-        const grupo = deUso(uso)
-        if (!grupo.length) return null
-        return (
-          <div key={uso} className={`fotos ${clase}`}>
-            {grupo.map((f) => (
-              <Foto key={f.archivo} foto={f} sizes={sizes} className="foto aparece" />
-            ))}
-          </div>
-        )
-      })}
     </section>
   )
 }

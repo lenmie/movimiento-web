@@ -18,7 +18,7 @@ En la etapa de Test cada criterio se convierte en al menos un caso de prueba.
 
 Una sola página, en español, que presenta el libro de fotografía *Movimiento* y lleva a la
 persona a **descargarlo**. Muestra un **contador público de descargas** y ofrece, sin
-interferir, un **aporte voluntario**. Estética: fondo oscuro, fotos en blanco y negro a sangre,
+interferir, un **aporte voluntario**. Estética: fondo oscuro, fotos en blanco y negro (a sangre en la portada y el cierre),
 el logotipo y las tipografías del libro (Libre Bodoni + Poppins). Las fotos de las prácticas son
 mayormente **inéditas**, para mostrar algo que no está en el libro e invitar a descargarlo.
 
@@ -40,7 +40,7 @@ mayormente **inéditas**, para mostrar algo que no está en el libro e invitar a
 Orden de secciones (de arriba hacia abajo). La columna *Fuente* indica de dónde sale el contenido.
 
 Dirección visual: **"Suspensión"** (borrador previo de Claude Design, opción 2a), adaptada: fondo oscuro,
-fotos a sangre, tipografía grande sobre imagen, un recorrido por las tres prácticas del libro.
+fotos a sangre en la portada y el cierre, tipografía grande sobre imagen, un recorrido por las tres prácticas del libro.
 
 **La página es un adelanto que se recorre de arriba abajo:** no hay botones arriba. Todos los
 botones (descarga, aporte, pedido por mail) están en el cierre (S8). El hero invita a bajar (R7).
@@ -127,7 +127,7 @@ incluyen en el sitio.
 ├───────────────────────────────────────────────────────────┤
 │ I  Contorsión                                             │
 │ texto (≈ 2/3)                         │ cronología (≈ 1/3) │
-│ [foto ancha a sangre]                                     │
+│ [foto ancha, con margen a los costados]                   │
 │ [vert] [vert] [vert] [vert]                               │
 ├───────────────────────────────────────────────────────────┤
 │ II y III con el mismo patrón · Protagonistas (5 × 2) ·    │
@@ -415,8 +415,10 @@ aunque deje de contar (R1.5).
 
 ### 6.2 Fotografía
 
-- Todas las fotos en blanco y negro. Recortes: a sangre (3:2, proporción original; la de Danza, recortada arriba: casi 2:1), fila de 2 (3:2),
+- Todas las fotos en blanco y negro. Recortes: ancha (3:2, proporción original; la de Danza, recortada arriba: casi 2:1), fila de 2 (3:2),
   cuadrado 1:1, vertical 0,66 y retrato 0,78.
+- Solo la portada (S1) y el cierre (S8) van a sangre. Las fotos de las prácticas (S3–S5), Protagonistas
+  (S6) y El Libro (S7b) dejan el mismo margen a los costados que el texto.
 - Fuente preferida: archivos originales de los fotógrafos; alternativa: exportar desde el PDF.
 - El cierre (S8) usa de fondo una inédita: la practicante tendida en el piso, con un velo oscuro que
   se funde con el negro de la página arriba y abajo.
