@@ -1,14 +1,12 @@
 // Contador público de descargas (R2).
 
-/** Por debajo de este total el número no se muestra (R2.6, D5). */
-export const UMBRAL = 50
 const TIEMPO_MAX_MS = 3000
 
 const numero = new Intl.NumberFormat('es-AR')
 
-/** "1 descarga", "1.284 descargas"; `null` si no corresponde mostrarlo (R2.3, R2.6). */
+/** "1 descarga", "1.284 descargas"; `null` sin dato o con 0, que nunca se muestra (R2.3, R2.6). */
 export function formatearDescargas(total: number | null): string | null {
-  if (total === null || !Number.isFinite(total) || total < UMBRAL) return null
+  if (total === null || !Number.isFinite(total) || total < 1) return null
   return `${numero.format(total)} ${total === 1 ? 'descarga' : 'descargas'}`
 }
 

@@ -196,7 +196,7 @@ móviles —inicio, cierre y después de descargar—, hoja de estados y vista p
   - Si Turnstile no carga (por ejemplo, un bloqueador), el enlace funciona igual y la descarga no se cuenta.
   - Las solicitudes `HEAD` nunca se cuentan.
 - R2.5 **Falla:** si `/api/contador` falla o tarda > 3 s, el número **no se muestra** (nunca "0" ni un spinner eterno).
-- R2.6 **Umbral (D5):** mientras el total sea < 50, no se muestra el número.
+- R2.6 **Sin umbral (D5):** el número se muestra desde la primera descarga. Con total 0 no se muestra.
 - R2.7 **Origen del tráfico:** los enlaces que se comparten llevan `?ref=` (`instagram`, `whatsapp`,
   `facebook`, `mail`, `qr`). La página pasa ese valor a `/descargar`. Valores fuera de la lista →
   `otro`; sin `ref` → `directo`. No se usa el encabezado `Referer` (las apps lo suelen borrar).
@@ -506,7 +506,7 @@ Cada una tiene un valor por defecto; si nadie objeta, el spec avanza con ese val
 | D2 | Infraestructura | **Decidido:** Cloudflare Pages + Workers + D1 + R2 + Turnstile, todo en plan gratuito (§5.2) | — |
 | D3 | Plataforma de aporte | **Decidido:** Cafecito (`cafecito.app/movimientolibro`) y Mercado Pago (`link.mercadopago.com.ar/movimientolibro`) | Enlaces en `wrangler.toml` (`CAFECITO_URL`, `MERCADOPAGO_URL`) |
 | D4 | Dominio | Subdominio gratuito (`movimientolibro.pages.dev`; `movimiento.pages.dev` y `movimiento-2uc.pages.dev` no se usan) | Un dominio propio tiene costo anual: queda fuera mientras rija "todo gratis" |
-| D5 | Umbral para mostrar el contador | 50 | Evita mostrar "3 descargas" el primer día |
+| D5 | Umbral para mostrar el contador | **Decidido:** sin umbral; se muestra desde 1 (con 0, nada) | Antes era 50; se quitó para mostrar el total desde el inicio |
 | D6 | ¿Deduplicar descargas repetidas? | **Decidido:** no | Requeriría cookies o IP, que §7 prohíbe. El captcha filtra bots (R2.4) |
 | D7 | Retratos y apodos de protagonistas | Retratos y nombres (como en el libro), sin apodos | Retratos tomados de las págs. 122–127; el rol "Profesora" corresponde a Carla Zabala |
 | D8 | ¿Hay URL pública de la memoria académica? | No se enlaza hasta tenerla | — |

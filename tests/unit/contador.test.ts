@@ -1,15 +1,15 @@
 import { describe, expect, it, vi } from 'vitest'
-import { formatearDescargas, obtenerDescargas, UMBRAL } from '../../src/lib/contador'
+import { formatearDescargas, obtenerDescargas } from '../../src/lib/contador'
 
 describe('formatearDescargas (R2.3, R2.6)', () => {
   it('formatea con separador de miles es-AR', () => {
     expect(formatearDescargas(1284)).toBe('1.284 descargas')
   })
 
-  it('no muestra el número por debajo del umbral', () => {
-    expect(UMBRAL).toBe(50)
-    expect(formatearDescargas(49)).toBeNull()
-    expect(formatearDescargas(50)).toBe('50 descargas')
+  it('muestra el número desde la primera descarga, sin umbral (R2.6)', () => {
+    expect(formatearDescargas(0)).toBeNull()
+    expect(formatearDescargas(1)).toBe('1 descarga')
+    expect(formatearDescargas(12)).toBe('12 descargas')
   })
 
   it('no muestra nada sin dato', () => {

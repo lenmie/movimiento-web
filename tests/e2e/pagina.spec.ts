@@ -155,8 +155,14 @@ test.describe('contador (R2)', () => {
     await expect(page.locator('.contador')).toHaveCount(0)
   })
 
-  test('por debajo de 50 no se muestra el número', async ({ page }) => {
+  test('sin umbral: con pocas descargas el número se muestra (R2.6)', async ({ page }) => {
     await simularContador(page, { descargas: 12 })
+    await page.goto('/')
+    await expect(page.locator('.contador')).toHaveText('12 descargas')
+  })
+
+  test('con 0 descargas no se muestra el número (R2.6)', async ({ page }) => {
+    await simularContador(page, { descargas: 0 })
     await page.goto('/')
     await expect(botonDescarga(page)).toBeVisible()
     await expect(page.locator('.contador')).toHaveCount(0)
