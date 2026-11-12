@@ -2,6 +2,10 @@ import { contenido } from '../content'
 
 const { texto, destacado } = contenido.apertura
 const [antes, despues] = texto.split(destacado)
+// En teléfonos la última frase se parte antes de "también" (solo visual; el texto no cambia).
+const corte = despues.indexOf(' también')
+const antesCorte = despues.slice(0, corte)
+const despuesCorte = despues.slice(corte)
 
 /** S2: cita de apertura (pág. 7, fragmentos). */
 export function Cita() {
@@ -11,7 +15,9 @@ export function Cita() {
         <p>
           {antes}
           <strong>{destacado}</strong>
-          {despues}
+          {antesCorte}
+          <br className="cita__corte" />
+          {despuesCorte}
         </p>
       </blockquote>
     </section>
